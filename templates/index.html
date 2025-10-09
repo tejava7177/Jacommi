@@ -2,10 +2,30 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
-  <title>Jacommi 홈</title>
+  <title>오늘의 일본어 5문장</title>
+  <script>
+    function speakJa(text){ const u=new SpeechSynthesisUtterance(text); u.lang='ja-JP'; speechSynthesis.speak(u); }
+  </script>
 </head>
 <body>
-  <h1>Jacommi: Django OK!</h1>
-  <p><a href="/health">/health</a> 로 접속하면 JSON 헬스체크 결과를 볼 수 있습니다.</p>
+  <h1>오늘의 일본어 5문장</h1>
+  <p><a href="/health">/health</a> | <a href="/api/today">/api/today</a></p>
+
+  {% if payload %}
+    <h3>{{ payload.topic }}</h3>
+    <ol>
+      {% for s in payload.sentences %}
+        <li>
+          <div>
+            <b>{{ s.jp }}</b>
+            <button onclick="speakJa('{{ s.jp|escapejs }}')">▶︎ 재생</button>
+          </div>
+          <div>{{ s.ko }}</div>
+        </li>
+      {% endfor %}
+    </ol>
+  {% else %}
+    <p>아직 생성된 세트가 없어요. 대신 <a href="/api/today">/api/today</a>에서 더미 데이터를 확인할 수 있습니다.</p>
+  {% endif %}
 </body>
 </html>
