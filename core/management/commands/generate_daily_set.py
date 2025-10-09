@@ -2,7 +2,10 @@ import os
 import json
 from django.core.management.base import BaseCommand
 from django.utils import timezone
-from core.models import DailySet
+from core.models import DailySet, ApiUsageLog
+from core.usage import estimate_cost
+from decimal import Decimal
+from datetime import date as date_cls
 
 SYSTEM_PROMPT = (
     "당신은 일본 IT 기업 현업 PM 겸 일본어 교육 전문가입니다. "
@@ -37,19 +40,46 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument("--topic", default="スプリント計画 会議", help="주제(기본: 스프린트 계획 회의)")
+        parser.add_argument("--date", default=None, help="YYYY-MM-DD 로 특정 날짜 생성")
+        parser.add_argument("--force", action="store_true", help="이미 있어도 재생성(기존 레코드 덮어씀)")
 
     def handle(self, *args, **opts):
-        date = timezone.localdate()
-        topic = opts["topic"]
+        if opts.get("date"):
+            try:
+                target_date = date_cls.fromisoformat(opts["date"])
+            except ValueError:
+                self.stdout.write(self.style.ERROR("Invalid --date. Use YYYY-MM-DD"))
+                return
+        else:
+            target_date = timezone.localdate()
 
-        if DailySet.objects.filter(date=date).exists():
-            self.stdout.write(self.style.WARNING(f"Already exists for {date}"))
+        topic = opts["topic"]
+        force = bool(opts.get("force"))
+
+        model_name = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
+
+        exists = DailySet.objects.filter(date=target_date).exists()
+        if exists and not force:
+            self.stdout.write(self.style.WARNING(f"Already exists for {target_date}"))
             return
+        if exists and force:
+            DailySet.objects.filter(date=target_date).delete()
+            ApiUsageLog.objects.filter(date=target_date, model=model_name).delete()
 
         api_key = os.getenv("OPENAI_API_KEY", "").strip()
         if not api_key:
-            data = _fallback_dummy(date.isoformat())
-            DailySet.objects.create(date=date, topic=data.get("topic", ""), payload=data)
+            data = _fallback_dummy(target_date.isoformat())
+            DailySet.objects.create(date=target_date, topic=data.get("topic", ""), payload=data)
+            # usage log (no key)
+            ApiUsageLog.objects.create(
+                date=target_date,
+                model=model_name,
+                prompt_tokens=0,
+                completion_tokens=0,
+                total_tokens=0,
+                cost_usd=Decimal("0"),
+                meta={"reason": "no_api_key"}
+            )
             self.stdout.write(self.style.SUCCESS("Generated (dummy, no OPENAI_API_KEY)"))
             return
 
@@ -60,10 +90,11 @@ class Command(BaseCommand):
 
             msgs = [
                 {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": _build_user_prompt(date.isoformat(), topic)},
+                {"role": "user", "content": _build_user_prompt(target_date.isoformat(), topic)},
             ]
+            # Using model: {model_name}
             resp = client.chat.completions.create(
-                model="gpt-5.1-mini",
+                model=model_name,
                 messages=msgs,
                 temperature=0.7,
                 response_format={"type": "json_object"},
@@ -76,11 +107,39 @@ class Command(BaseCommand):
             if not (isinstance(s, list) and len(s) == 5):
                 raise ValueError("Invalid JSON format from model (sentences length != 5)")
 
-            DailySet.objects.create(date=date, topic=data.get("topic", ""), payload=data)
-            self.stdout.write(self.style.SUCCESS("Generated (OpenAI)"))
+            DailySet.objects.create(date=target_date, topic=data.get("topic", ""), payload=data)
+
+            # usage/cost logging
+            usage = getattr(resp, "usage", None)
+            prompt_tokens = getattr(usage, "prompt_tokens", 0) if usage else 0
+            completion_tokens = getattr(usage, "completion_tokens", 0) if usage else 0
+            total_tokens = getattr(usage, "total_tokens", prompt_tokens + completion_tokens) if usage else (prompt_tokens + completion_tokens)
+            cost = estimate_cost(model_name, prompt_tokens, completion_tokens)
+
+            ApiUsageLog.objects.create(
+                date=target_date,
+                model=model_name,
+                prompt_tokens=prompt_tokens,
+                completion_tokens=completion_tokens,
+                total_tokens=total_tokens,
+                cost_usd=cost,
+                meta={"topic": topic}
+            )
+
+            self.stdout.write(self.style.SUCCESS(f"Generated (OpenAI) tokens={total_tokens} cost=${cost}"))
+            return
 
         except Exception as e:
             # 실패 시 더미로라도 저장해서 서비스는 계속 동작
-            data = _fallback_dummy(date.isoformat())
-            DailySet.objects.create(date=date, topic=data.get("topic", ""), payload=data)
+            data = _fallback_dummy(target_date.isoformat())
+            DailySet.objects.create(date=target_date, topic=data.get("topic", ""), payload=data)
+            ApiUsageLog.objects.create(
+                date=target_date,
+                model=model_name,
+                prompt_tokens=0,
+                completion_tokens=0,
+                total_tokens=0,
+                cost_usd=Decimal("0"),
+                meta={"fallback_error": str(e)}
+            )
             self.stdout.write(self.style.WARNING(f"OpenAI failed, fallback dummy used: {e}"))
