@@ -24,7 +24,7 @@ INSTALLED_APPS = [
     # Third-party
     "rest_framework",
     # Local apps
-    # "core",  # ← 생성 후 주석 해제
+    "core",  # ← 생성 후 주석 해제
 ]
 
 # --- Middleware ---
