@@ -28,4 +28,27 @@
     <p>아직 생성된 세트가 없어요. 대신 <a href="/api/today">/api/today</a>에서 더미 데이터를 확인할 수 있습니다.</p>
   {% endif %}
 </body>
+  <hr>
+  <button id="enable-noti">알림 권한 허용 & 토큰 등록</button>
+  <div id="noti-status" style="font-size:12px; opacity:0.8;"></div>
+
+  <!-- Load FCM client code as an ES module -->
+  <script type="module" src="/static/main.js"></script>
+  <script>
+    // Provide a user gesture to trigger permission + token registration
+    document.getElementById('enable-noti')?.addEventListener('click', async () => {
+      const el = document.getElementById('noti-status');
+      try {
+        if (window.registerFCM) {
+          el.textContent = '요청 중...';
+          await window.registerFCM();
+          el.textContent = '완료! 브라우저 콘솔에서 토큰을 확인하세요.';
+        } else {
+          el.textContent = 'main.js 로딩 전입니다. 새로고침 후 다시 시도해주세요.';
+        }
+      } catch (e) {
+        el.textContent = '실패: ' + e;
+      }
+    });
+  </script>
 </html>
