@@ -18,6 +18,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from core.views import fcm_register
+from core.views_auth import google_login, google_callback
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +28,7 @@ urlpatterns = [
     path("api/admin/", include("core.api_admin")),
 
     path("api/fcm/register", fcm_register, name="fcm_register"),
+
+    path("api/auth/google/login", google_login, name="google_login"),
+    path("api/auth/google/callback", google_callback, name="google_callback"),
 ]

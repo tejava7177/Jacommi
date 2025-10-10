@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import DailySet, ApiUsageLog
 from .models import FcmToken
+from .models import GoogleAccount
 
 @admin.register(DailySet)
 class DailySetAdmin(admin.ModelAdmin):
@@ -21,3 +22,9 @@ class FcmTokenAdmin(admin.ModelAdmin):
     list_display = ("token", "platform", "active", "created_at")
     search_fields = ("token",)
     list_filter = ("platform", "active")
+
+
+@admin.register(GoogleAccount)
+class GoogleAccountAdmin(admin.ModelAdmin):
+    list_display = ("email", "calendar_id", "last_event_date")
+    search_fields = ("email",)

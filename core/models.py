@@ -33,3 +33,15 @@ class FcmToken(models.Model):
     platform = models.CharField(max_length=20, default='web')
     active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+
+# Google 계정 OAuth 정보 저장
+class GoogleAccount(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    refresh_token = models.TextField(blank=True, default="")
+    email = models.EmailField(blank=True, default="")
+    calendar_id = models.CharField(max_length=200, default="primary")
+    last_event_date = models.DateField(null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.email or self.user.username}"
