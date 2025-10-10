@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4bb68edd-5845-46b0-8587-b5943c5d9792" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/core/google_calendar.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/management/commands/push_calendar_event.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-    </list>
+    <list default="true" id="4bb68edd-5845-46b0-8587-b5943c5d9792" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -113,7 +108,7 @@
       <option name="presentableId" value="Default" />
       <updated>1760008007957</updated>
       <workItem from="1760008008980" duration="18444000" />
-      <workItem from="1760095235580" duration="5779000" />
+      <workItem from="1760095235580" duration="5963000" />
     </task>
     <servers />
   </component>
