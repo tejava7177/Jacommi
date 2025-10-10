@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4bb68edd-5845-46b0-8587-b5943c5d9792" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/core/firebase_client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/management/commands/push_today.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacommi-2a250-firebase-adminsdk-fbsvc-ccb190d8b1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jacommi/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Jacommi/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/firebase-messaging-sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/firebase-messaging-sw.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run_push_today.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,21 +26,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "tejava7177"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;tejava7177&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/tejava7177/Jacommi.git",
-    "accountId": "6074c0f3-8873-4e9d-80e6-070b9199ab5e"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/tejava7177/Jacommi.git&quot;,
+    &quot;accountId&quot;: &quot;6074c0f3-8873-4e9d-80e6-070b9199ab5e&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="33pJJNN9hkSd036MKCGLkzdjiUN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -59,6 +51,7 @@
   "keyToString": {
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
     "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
@@ -118,6 +111,7 @@
       <option name="presentableId" value="Default" />
       <updated>1760008007957</updated>
       <workItem from="1760008008980" duration="18444000" />
+      <workItem from="1760095235580" duration="389000" />
     </task>
     <servers />
   </component>
