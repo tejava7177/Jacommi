@@ -68,8 +68,14 @@ async function registerFCM() {
 // 6) 포그라운드 메시지 수신 시 브라우저 알림
 onMessage(messaging, (payload) => {
   console.log("📩 Foreground message:", payload);
-  const { title, body } = payload.notification || {};
-  if (title) new Notification(title, { body: body || "" });
+  const n = payload.notification || {};
+  const title = n.title || payload.data?.title || "오늘의 일본어";
+  const body  = n.body  || payload.data?.body  || "새 문장을 확인해보세요";
+
+  // 포그라운드에서도 확실히 알림을 띄우기 위해 Notification API 사용
+  if (Notification.permission === "granted") {
+    new Notification(title, { body });
+  }
 });
 
 // 실행

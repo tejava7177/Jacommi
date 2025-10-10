@@ -19,7 +19,8 @@ const messaging = firebase.messaging();
 // 백그라운드 수신 시 알림 표시
 messaging.onBackgroundMessage((payload) => {
   console.log("[SW] background message:", payload);
-  const { title, body } = payload.notification || {};
-  if (!title) return;
-  self.registration.showNotification(title, { body: body || "" });
+  const n = (payload && payload.notification) || {};
+  const title = n.title || (payload.data && payload.data.title) || "오늘의 일본어";
+  const body  = n.body  || (payload.data && payload.data.body)  || "새 문장을 확인해보세요";
+  self.registration.showNotification(title, { body });
 });

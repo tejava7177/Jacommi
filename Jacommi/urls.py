@@ -17,6 +17,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from core.views import fcm_register
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +25,6 @@ urlpatterns = [
     path("api/", include("core.api")),
 
     path("api/admin/", include("core.api_admin")),
+
+    path("api/fcm/register", fcm_register, name="fcm_register"),
 ]
