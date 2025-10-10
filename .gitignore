@@ -1,7 +1,42 @@
+# --- Python/Django
+__pycache__/
+*.py[cod]
+*.egg-info/
+db.sqlite3
+/media/
+staticfiles/          # collectstatic 결과(운영에서만)
+*.log
+*.sqlite3
+
+# --- Envs & Secrets
 .env
-README.md
+*.env
+*.key
+*.pem
+*.p12
+*.crt
+*credentials*.json
+*service-account*.json
+*jwks*.json
+*secret*.json
+
+# --- Firebase / Google
+firebase-debug.log
+google-credentials.json
+
 
 *.json
 *.sh
 
-*.js
+# --- Node/Web (혹시 도입 시)
+node_modules/
+dist/
+build/
+.cache/
+
+# --- OS / IDE
+.DS_Store
+.idea/
+.vscode/
+
+
