@@ -42,6 +42,7 @@ class GoogleAccount(models.Model):
     email = models.EmailField(blank=True, default="")
     calendar_id = models.CharField(max_length=200, default="primary")
     last_event_date = models.DateField(null=True, blank=True)
+    photo_url = models.URLField(blank=True, default="")
 
     def __str__(self):
         return f"{self.email or self.user.username}"

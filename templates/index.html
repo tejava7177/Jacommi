@@ -14,13 +14,17 @@
       <h1 class="brand">Jacommi</h1>
 
       <nav class="appbar__right">
-        {% if request.user.is_authenticated %}
-          <span class="chip chip--success">로그인됨</span>
-          <a class="link subtle" href="/admin/">관리</a>
-        {% else %}
-          <a class="btn btn--primary" href="/api/auth/google/login">구글로 로그인/연동</a>
-        {% endif %}
-      </nav>
+  {% if request.user.is_authenticated and ga and ga.photo_url %}
+    <a class="avatar" href="/admin/" title="{{ ga.email }}">
+      <img src="{{ ga.photo_url }}" alt="{{ ga.email }}" referrerpolicy="no-referrer">
+    </a>
+  {% elif request.user.is_authenticated %}
+    <span class="chip chip--success">로그인됨</span>
+    <a class="link subtle" href="/admin/">관리</a>
+  {% else %}
+    <a class="btn btn--primary" href="/api/auth/google/login">구글로 로그인/연동</a>
+  {% endif %}
+</nav>
     </div>
   </header>
 

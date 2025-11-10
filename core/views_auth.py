@@ -1,4 +1,5 @@
 import os, json
+import requests
 from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
@@ -9,6 +10,7 @@ from .google_oauth import build_flow
 from .models import GoogleAccount
 from django.contrib.auth.models import User
 from django.contrib.auth import login
+
 
 # 1) 로그인 시작: 구글 동의 화면으로 리다이렉트
 def google_login(request):
@@ -25,31 +27,45 @@ def google_login(request):
 # 2) 콜백: 토큰 교환 & DB 저장
 @csrf_exempt  # GET만 오므로 CSRF 문제 없음(템플릿 POST 안 함)
 def google_callback(request):
-    state = request.session.get("google_oauth_state")
-    # Validate state to mitigate CSRF
+    # 1) state 검증 + 재사용 방지
+    state = request.session.pop("google_oauth_state", None)
     if request.GET.get("state") != state:
         return JsonResponse({"ok": False, "error": "invalid_state"}, status=400)
+
+    # 2) 토큰 교환
     flow = build_flow(state=state)
     flow.fetch_token(authorization_response=request.build_absolute_uri())
-
-    creds = flow.credentials  # includes access_token, refresh_token (if consent)
+    creds = flow.credentials
     refresh_token = getattr(creds, "refresh_token", None)
     access_token = creds.token
 
-    # 사용자 정보 조회 (id_token)
+    # 3) 이메일 파악(id_token) + UserInfo로 프로필 보강
+    email = None
     try:
         idinfo = id_token.verify_oauth2_token(
             creds.id_token, grequests.Request(), os.getenv("GOOGLE_OAUTH_CLIENT_ID")
         )
         email = idinfo.get("email")
     except Exception:
-        # id_token 없는 경우 userinfo 엔드포인트 대체도 가능(여기선 단순 처리)
-        email = None
+        pass
 
-    # 간단히: 로그인된 Django user가 없으면 superuser 계정으로 연결하거나
-    # 또는 이메일로 local user를 만들자(프로토타입)
+    userinfo, picture, display_name = {}, "", ""
+    try:
+        ui_res = requests.get(
+            "https://www.googleapis.com/oauth2/v2/userinfo",
+            headers={"Authorization": f"Bearer {access_token}"},
+            timeout=5,
+        )
+        if ui_res.ok:
+            userinfo = ui_res.json()
+            email = email or userinfo.get("email")
+            picture = userinfo.get("picture") or ""
+            display_name = userinfo.get("name") or ""
+    except Exception:
+        pass
+
+    # 4) 로컬 유저 준비 + 세션 로그인
     if not request.user.is_authenticated:
-        # 이메일 기반 dummy 유저 연결 (실서비스에선 proper 로그인 프로세스 권장)
         if email:
             user, _ = User.objects.get_or_create(username=email, defaults={"email": email})
         else:
@@ -57,18 +73,17 @@ def google_callback(request):
     else:
         user = request.user
 
-    # Ensure the Django session is authenticated with this user
     try:
         login(request, user)
     except Exception:
         pass
 
-    # Preserve existing refresh token if not returned this time
+    # 5) 기존 refresh_token 보존
     existing_ga = GoogleAccount.objects.filter(user=user).first()
     if not refresh_token and existing_ga and existing_ga.refresh_token:
         refresh_token = existing_ga.refresh_token
 
-    # Google Calendar 기본 캘린더 ID 가져오기 (선택)
+    # 6) 기본 캘린더 id 확보(실패 시 primary)
     try:
         service = build("calendar", "v3", credentials=creds)
         cal_list = service.calendarList().list(maxResults=1).execute()
@@ -76,16 +91,24 @@ def google_callback(request):
     except Exception:
         calendar_id = "primary"
 
-    # DB upsert
+    # 7) GoogleAccount upsert (+ 사진 저장)
     GoogleAccount.objects.update_or_create(
         user=user,
         defaults={
-            "refresh_token": refresh_token or (existing_ga.refresh_token if existing_ga else ""),  # 첫 동의 시에만 제공 가능
-            "email": email or "",
+            "refresh_token": refresh_token or (existing_ga.refresh_token if existing_ga else ""),
+            "email": email or (existing_ga.email if existing_ga else ""),
             "calendar_id": calendar_id,
             "last_event_date": None,
+            "photo_url": picture or (getattr(existing_ga, "photo_url", "") if existing_ga else ""),
         },
     )
 
-    # 완료 후 리다이렉트 (홈으로)
+    # 8) 표시 이름을 로컬 User에 반영(선택)
+    if display_name and (not user.first_name and not user.last_name):
+        try:
+            user.first_name = display_name
+            user.save(update_fields=["first_name"])
+        except Exception:
+            pass
+
     return HttpResponseRedirect("/")

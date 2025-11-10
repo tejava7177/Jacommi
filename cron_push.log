@@ -2007,3 +2007,8 @@ Traceback (most recent call last):
 firebase_admin.exceptions.UnknownError: Unknown error while making remote service calls: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1058c5400>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
 
 ERROR conda.cli.main_run:execute(125): `conda run python /Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py push_today` failed. (See above for error)
+[INFO] 2025-11-10 17:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-11-10 17:00:07 push_today end
+----------------------------------------

@@ -6,6 +6,10 @@ import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import FcmToken
+from django.shortcuts import render
+from django.utils import timezone
+from .models import DailySet, GoogleAccount
+
 
 def health(request):
     return JsonResponse({"status": "ok"})
@@ -33,3 +37,14 @@ def fcm_register(request):
         return JsonResponse({"ok": True, "created": created})
     except Exception as e:
         return JsonResponse({"ok": False, "error": str(e)}, status=400)
+
+
+def today_page(request):
+    ds = DailySet.objects.filter(date=timezone.localdate()).first()
+    ga = None
+    if request.user.is_authenticated:
+        ga = GoogleAccount.objects.filter(user=request.user).first()
+    return render(request, "index.html", {
+        "payload": ds.payload if ds else None,
+        "ga": ga,
+    })
