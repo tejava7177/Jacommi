@@ -3,3 +3,2007 @@ Push sent: 1/1 success
 
 [INFO] 2025-10-10 20:30:22 push_today end
 ----------------------------------------
+[INFO] 2025-10-12 13:00:01 push_today start
+No DailySet for today
+
+[INFO] 2025-10-12 13:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-12 19:01:40 push_today start
+No DailySet for today
+
+[INFO] 2025-10-12 19:08:32 push_today end
+----------------------------------------
+[INFO] 2025-10-13 10:00:01 push_today start
+No DailySet for today
+
+[INFO] 2025-10-13 10:00:06 push_today end
+----------------------------------------
+[INFO] 2025-10-14 09:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-10-14 09:53:33 push_today end
+----------------------------------------
+[INFO] 2025-10-14 10:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-10-14 10:00:06 push_today end
+----------------------------------------
+[INFO] 2025-10-14 11:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-10-14 11:00:06 push_today end
+----------------------------------------
+[INFO] 2025-10-14 12:00:01 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-10-14 12:00:06 push_today end
+----------------------------------------
+[INFO] 2025-10-14 13:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-10-14 13:00:06 push_today end
+----------------------------------------
+[INFO] 2025-10-14 14:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-10-14 14:00:06 push_today end
+----------------------------------------
+[INFO] 2025-10-14 15:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-10-14 15:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-14 16:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-10-14 16:00:06 push_today end
+----------------------------------------
+[INFO] 2025-10-14 17:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-10-14 17:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-14 18:00:01 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-10-14 18:00:07 push_today end
+----------------------------------------
+[INFO] 2025-10-14 19:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-10-14 19:00:06 push_today end
+----------------------------------------
+[INFO] 2025-10-14 20:00:01 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-10-14 20:00:07 push_today end
+----------------------------------------
+[INFO] 2025-10-15 13:03:29 push_today start
+No DailySet for today
+
+[INFO] 2025-10-15 13:03:33 push_today end
+----------------------------------------
+[INFO] 2025-10-15 20:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-15 20:00:07 push_today end
+----------------------------------------
+[INFO] 2025-10-16 11:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-16 11:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-16 12:00:01 push_today start
+No DailySet for today
+
+[INFO] 2025-10-16 12:00:06 push_today end
+----------------------------------------
+[INFO] 2025-10-16 13:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-16 13:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-16 14:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-16 14:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-16 15:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-16 15:00:04 push_today end
+----------------------------------------
+[INFO] 2025-10-16 16:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-16 16:00:04 push_today end
+----------------------------------------
+[INFO] 2025-10-17 11:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-10-17 11:00:07 push_today end
+----------------------------------------
+[INFO] 2025-10-17 14:01:31 push_today start
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/socket.py", line 978, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connection.py", line 753, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x1081a5550>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1081a5550>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/transport/requests.py", line 187, in __call__
+    response = self.session.request(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1081a5550>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 452, in send_each
+    responses = list(executor.map(send_data, message_data))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 440, in send_data
+    resp = self._client.body(
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/_http_client.py", line 148, in body
+    resp = self.request(method, url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/_http_client.py", line 135, in request
+    resp = self._session.request(method, self.base_url + url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/transport/requests.py", line 535, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/credentials.py", line 228, in before_request
+    self._blocking_refresh(request)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/credentials.py", line 191, in _blocking_refresh
+    self.refresh(request)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/credentials.py", line 365, in refresh
+    self._refresh_token(request)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/service_account.py", line 459, in _refresh_token
+    access_token, expiry, _ = _client.jwt_grant(
+                              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/_client.py", line 299, in jwt_grant
+    response_data = _token_endpoint_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/_client.py", line 259, in _token_endpoint_request
+    response_status_ok, response_data, retryable_error = _token_endpoint_request_no_throw(
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+               ^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/transport/requests.py", line 194, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1081a5550>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py", line 24, in <module>
+    main()
+  File "/Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py", line 20, in main
+    execute_from_command_line(sys.argv)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/__init__.py", line 442, in execute_from_command_line
+    utility.execute()
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/__init__.py", line 436, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/base.py", line 416, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/base.py", line 460, in execute
+    output = self.handle(*args, **options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/simjuheun/Desktop/개인프로젝트/Jacommi/core/management/commands/push_today.py", line 66, in handle
+    res = messaging.send_each_for_multicast(msg)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 240, in send_each_for_multicast
+    return _get_messaging_service(app).send_each(messages, dry_run)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 455, in send_each
+    raise exceptions.UnknownError(
+firebase_admin.exceptions.UnknownError: Unknown error while making remote service calls: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1081a5550>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+ERROR conda.cli.main_run:execute(125): `conda run python /Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py push_today` failed. (See above for error)
+[INFO] 2025-10-17 15:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-10-17 15:00:06 push_today end
+----------------------------------------
+[INFO] 2025-10-17 18:00:48 push_today start
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/socket.py", line 978, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connection.py", line 753, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x103e65490>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x103e65490>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/transport/requests.py", line 187, in __call__
+    response = self.session.request(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x103e65490>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 452, in send_each
+    responses = list(executor.map(send_data, message_data))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 440, in send_data
+    resp = self._client.body(
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/_http_client.py", line 148, in body
+    resp = self.request(method, url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/_http_client.py", line 135, in request
+    resp = self._session.request(method, self.base_url + url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/transport/requests.py", line 535, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/credentials.py", line 228, in before_request
+    self._blocking_refresh(request)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/credentials.py", line 191, in _blocking_refresh
+    self.refresh(request)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/credentials.py", line 365, in refresh
+    self._refresh_token(request)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/service_account.py", line 459, in _refresh_token
+    access_token, expiry, _ = _client.jwt_grant(
+                              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/_client.py", line 299, in jwt_grant
+    response_data = _token_endpoint_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/_client.py", line 259, in _token_endpoint_request
+    response_status_ok, response_data, retryable_error = _token_endpoint_request_no_throw(
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+               ^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/transport/requests.py", line 194, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x103e65490>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py", line 24, in <module>
+    main()
+  File "/Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py", line 20, in main
+    execute_from_command_line(sys.argv)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/__init__.py", line 442, in execute_from_command_line
+    utility.execute()
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/__init__.py", line 436, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/base.py", line 416, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/base.py", line 460, in execute
+    output = self.handle(*args, **options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/simjuheun/Desktop/개인프로젝트/Jacommi/core/management/commands/push_today.py", line 66, in handle
+    res = messaging.send_each_for_multicast(msg)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 240, in send_each_for_multicast
+    return _get_messaging_service(app).send_each(messages, dry_run)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 455, in send_each
+    raise exceptions.UnknownError(
+firebase_admin.exceptions.UnknownError: Unknown error while making remote service calls: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x103e65490>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+ERROR conda.cli.main_run:execute(125): `conda run python /Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py push_today` failed. (See above for error)
+[INFO] 2025-10-18 16:04:55 push_today start
+No DailySet for today
+
+[INFO] 2025-10-18 16:05:00 push_today end
+----------------------------------------
+[INFO] 2025-10-19 16:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-19 16:00:04 push_today end
+----------------------------------------
+[INFO] 2025-10-19 17:01:30 push_today start
+No DailySet for today
+
+[INFO] 2025-10-19 17:01:34 push_today end
+----------------------------------------
+[INFO] 2025-10-19 18:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-19 18:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-19 19:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-19 19:00:04 push_today end
+----------------------------------------
+[INFO] 2025-10-20 09:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-20 09:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-20 10:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-20 10:00:04 push_today end
+----------------------------------------
+[INFO] 2025-10-20 19:00:01 push_today start
+No DailySet for today
+
+[INFO] 2025-10-20 19:00:06 push_today end
+----------------------------------------
+[INFO] 2025-10-20 20:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-20 20:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-21 10:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-21 10:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-21 11:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-21 11:00:06 push_today end
+----------------------------------------
+[INFO] 2025-10-21 12:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-21 12:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-21 13:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-21 13:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-21 14:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-21 14:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-21 15:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-21 15:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-21 16:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-21 16:00:06 push_today end
+----------------------------------------
+[INFO] 2025-10-21 17:00:07 push_today start
+No DailySet for today
+
+[INFO] 2025-10-21 17:00:13 push_today end
+----------------------------------------
+[INFO] 2025-10-21 18:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-21 18:00:04 push_today end
+----------------------------------------
+[INFO] 2025-10-21 19:00:28 push_today start
+No DailySet for today
+
+[INFO] 2025-10-21 19:00:34 push_today end
+----------------------------------------
+[INFO] 2025-10-21 20:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-21 20:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-22 10:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-22 10:00:06 push_today end
+----------------------------------------
+[INFO] 2025-10-22 11:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-22 11:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-22 12:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-22 12:00:06 push_today end
+----------------------------------------
+[INFO] 2025-10-22 13:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-22 13:00:06 push_today end
+----------------------------------------
+[INFO] 2025-10-22 14:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-22 14:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-24 14:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-24 14:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-24 15:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-24 15:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-24 16:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-24 16:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-26 13:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-26 13:00:07 push_today end
+----------------------------------------
+[INFO] 2025-10-26 14:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-26 14:00:06 push_today end
+----------------------------------------
+[INFO] 2025-10-26 15:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-26 15:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-26 16:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-26 16:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-26 17:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-26 17:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-26 18:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-26 18:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-26 19:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-26 19:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-26 20:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-26 20:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-27 11:00:01 push_today start
+No DailySet for today
+
+[INFO] 2025-10-27 11:00:06 push_today end
+----------------------------------------
+[INFO] 2025-10-27 12:00:01 push_today start
+No DailySet for today
+
+[INFO] 2025-10-27 12:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-27 13:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-27 13:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-27 14:01:27 push_today start
+No DailySet for today
+
+[INFO] 2025-10-27 14:01:33 push_today end
+----------------------------------------
+[INFO] 2025-10-27 15:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-27 15:00:06 push_today end
+----------------------------------------
+[INFO] 2025-10-27 16:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-27 16:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-28 14:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-28 14:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-28 15:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-28 15:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-28 16:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-28 16:00:04 push_today end
+----------------------------------------
+[INFO] 2025-10-28 17:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-28 17:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-28 18:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-28 18:00:04 push_today end
+----------------------------------------
+[INFO] 2025-10-28 19:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-28 19:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-29 13:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-29 13:00:06 push_today end
+----------------------------------------
+[INFO] 2025-10-29 14:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-29 14:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-29 15:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-29 15:00:06 push_today end
+----------------------------------------
+[INFO] 2025-10-29 16:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-10-29 16:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-29 17:03:18 push_today start
+No DailySet for today
+
+[INFO] 2025-10-29 17:03:23 push_today end
+----------------------------------------
+[INFO] 2025-10-29 18:01:22 push_today start
+No DailySet for today
+
+[INFO] 2025-10-29 18:02:29 push_today end
+----------------------------------------
+[INFO] 2025-10-29 19:00:07 push_today start
+No DailySet for today
+
+[INFO] 2025-10-29 19:00:12 push_today end
+----------------------------------------
+[INFO] 2025-10-31 10:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-10-31 10:00:06 push_today end
+----------------------------------------
+[INFO] 2025-10-31 13:00:53 push_today start
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/socket.py", line 978, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connection.py", line 753, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x103d614f0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x103d614f0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/transport/requests.py", line 187, in __call__
+    response = self.session.request(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x103d614f0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 452, in send_each
+    responses = list(executor.map(send_data, message_data))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 440, in send_data
+    resp = self._client.body(
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/_http_client.py", line 148, in body
+    resp = self.request(method, url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/_http_client.py", line 135, in request
+    resp = self._session.request(method, self.base_url + url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/transport/requests.py", line 535, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/credentials.py", line 228, in before_request
+    self._blocking_refresh(request)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/credentials.py", line 191, in _blocking_refresh
+    self.refresh(request)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/credentials.py", line 365, in refresh
+    self._refresh_token(request)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/service_account.py", line 459, in _refresh_token
+    access_token, expiry, _ = _client.jwt_grant(
+                              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/_client.py", line 299, in jwt_grant
+    response_data = _token_endpoint_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/_client.py", line 259, in _token_endpoint_request
+    response_status_ok, response_data, retryable_error = _token_endpoint_request_no_throw(
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+               ^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/transport/requests.py", line 194, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x103d614f0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py", line 24, in <module>
+    main()
+  File "/Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py", line 20, in main
+    execute_from_command_line(sys.argv)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/__init__.py", line 442, in execute_from_command_line
+    utility.execute()
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/__init__.py", line 436, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/base.py", line 416, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/base.py", line 460, in execute
+    output = self.handle(*args, **options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/simjuheun/Desktop/개인프로젝트/Jacommi/core/management/commands/push_today.py", line 66, in handle
+    res = messaging.send_each_for_multicast(msg)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 240, in send_each_for_multicast
+    return _get_messaging_service(app).send_each(messages, dry_run)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 455, in send_each
+    raise exceptions.UnknownError(
+firebase_admin.exceptions.UnknownError: Unknown error while making remote service calls: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x103d614f0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+ERROR conda.cli.main_run:execute(125): `conda run python /Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py push_today` failed. (See above for error)
+[INFO] 2025-10-31 14:00:01 push_today start
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/socket.py", line 978, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connection.py", line 753, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x1041fd430>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1041fd430>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/transport/requests.py", line 187, in __call__
+    response = self.session.request(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1041fd430>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 452, in send_each
+    responses = list(executor.map(send_data, message_data))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 440, in send_data
+    resp = self._client.body(
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/_http_client.py", line 148, in body
+    resp = self.request(method, url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/_http_client.py", line 135, in request
+    resp = self._session.request(method, self.base_url + url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/transport/requests.py", line 535, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/credentials.py", line 228, in before_request
+    self._blocking_refresh(request)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/credentials.py", line 191, in _blocking_refresh
+    self.refresh(request)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/credentials.py", line 365, in refresh
+    self._refresh_token(request)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/service_account.py", line 459, in _refresh_token
+    access_token, expiry, _ = _client.jwt_grant(
+                              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/_client.py", line 299, in jwt_grant
+    response_data = _token_endpoint_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/_client.py", line 259, in _token_endpoint_request
+    response_status_ok, response_data, retryable_error = _token_endpoint_request_no_throw(
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+               ^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/transport/requests.py", line 194, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1041fd430>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py", line 24, in <module>
+    main()
+  File "/Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py", line 20, in main
+    execute_from_command_line(sys.argv)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/__init__.py", line 442, in execute_from_command_line
+    utility.execute()
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/__init__.py", line 436, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/base.py", line 416, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/base.py", line 460, in execute
+    output = self.handle(*args, **options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/simjuheun/Desktop/개인프로젝트/Jacommi/core/management/commands/push_today.py", line 66, in handle
+    res = messaging.send_each_for_multicast(msg)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 240, in send_each_for_multicast
+    return _get_messaging_service(app).send_each(messages, dry_run)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 455, in send_each
+    raise exceptions.UnknownError(
+firebase_admin.exceptions.UnknownError: Unknown error while making remote service calls: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1041fd430>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+ERROR conda.cli.main_run:execute(125): `conda run python /Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py push_today` failed. (See above for error)
+[INFO] 2025-10-31 15:00:01 push_today start
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/socket.py", line 978, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connection.py", line 753, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x103891490>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x103891490>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/transport/requests.py", line 187, in __call__
+    response = self.session.request(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x103891490>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 452, in send_each
+    responses = list(executor.map(send_data, message_data))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 440, in send_data
+    resp = self._client.body(
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/_http_client.py", line 148, in body
+    resp = self.request(method, url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/_http_client.py", line 135, in request
+    resp = self._session.request(method, self.base_url + url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/transport/requests.py", line 535, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/credentials.py", line 228, in before_request
+    self._blocking_refresh(request)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/credentials.py", line 191, in _blocking_refresh
+    self.refresh(request)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/credentials.py", line 365, in refresh
+    self._refresh_token(request)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/service_account.py", line 459, in _refresh_token
+    access_token, expiry, _ = _client.jwt_grant(
+                              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/_client.py", line 299, in jwt_grant
+    response_data = _token_endpoint_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/_client.py", line 259, in _token_endpoint_request
+    response_status_ok, response_data, retryable_error = _token_endpoint_request_no_throw(
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+               ^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/transport/requests.py", line 194, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x103891490>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py", line 24, in <module>
+    main()
+  File "/Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py", line 20, in main
+    execute_from_command_line(sys.argv)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/__init__.py", line 442, in execute_from_command_line
+    utility.execute()
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/__init__.py", line 436, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/base.py", line 416, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/base.py", line 460, in execute
+    output = self.handle(*args, **options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/simjuheun/Desktop/개인프로젝트/Jacommi/core/management/commands/push_today.py", line 66, in handle
+    res = messaging.send_each_for_multicast(msg)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 240, in send_each_for_multicast
+    return _get_messaging_service(app).send_each(messages, dry_run)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 455, in send_each
+    raise exceptions.UnknownError(
+firebase_admin.exceptions.UnknownError: Unknown error while making remote service calls: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x103891490>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+ERROR conda.cli.main_run:execute(125): `conda run python /Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py push_today` failed. (See above for error)
+[INFO] 2025-10-31 16:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-10-31 16:00:06 push_today end
+----------------------------------------
+[INFO] 2025-10-31 17:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-10-31 17:00:05 push_today end
+----------------------------------------
+[INFO] 2025-10-31 18:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-10-31 18:00:07 push_today end
+----------------------------------------
+[INFO] 2025-10-31 19:00:01 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-10-31 19:00:08 push_today end
+----------------------------------------
+[INFO] 2025-10-31 20:00:01 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-10-31 20:00:07 push_today end
+----------------------------------------
+[INFO] 2025-11-01 09:00:28 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-11-01 09:00:34 push_today end
+----------------------------------------
+[INFO] 2025-11-01 11:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-11-01 11:00:06 push_today end
+----------------------------------------
+[INFO] 2025-11-01 13:06:59 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-11-01 13:07:04 push_today end
+----------------------------------------
+[INFO] 2025-11-01 14:05:59 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-11-01 14:06:05 push_today end
+----------------------------------------
+[INFO] 2025-11-01 17:03:34 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-11-01 17:03:40 push_today end
+----------------------------------------
+[INFO] 2025-11-01 18:01:58 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-11-01 18:02:03 push_today end
+----------------------------------------
+[INFO] 2025-11-02 14:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-11-02 14:07:30 push_today end
+----------------------------------------
+[INFO] 2025-11-02 15:01:27 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-11-02 15:01:34 push_today end
+----------------------------------------
+[INFO] 2025-11-02 16:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-11-02 16:00:06 push_today end
+----------------------------------------
+[INFO] 2025-11-02 17:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-11-02 17:00:06 push_today end
+----------------------------------------
+[INFO] 2025-11-02 18:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-11-02 18:00:05 push_today end
+----------------------------------------
+[INFO] 2025-11-02 19:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-11-02 19:00:05 push_today end
+----------------------------------------
+[INFO] 2025-11-02 20:00:05 push_today start
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/socket.py", line 978, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connection.py", line 753, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x105df9640>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x105df9640>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/transport/requests.py", line 187, in __call__
+    response = self.session.request(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x105df9640>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 452, in send_each
+    responses = list(executor.map(send_data, message_data))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 440, in send_data
+    resp = self._client.body(
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/_http_client.py", line 148, in body
+    resp = self.request(method, url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/_http_client.py", line 135, in request
+    resp = self._session.request(method, self.base_url + url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/transport/requests.py", line 535, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/credentials.py", line 228, in before_request
+    self._blocking_refresh(request)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/credentials.py", line 191, in _blocking_refresh
+    self.refresh(request)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/credentials.py", line 365, in refresh
+    self._refresh_token(request)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/service_account.py", line 459, in _refresh_token
+    access_token, expiry, _ = _client.jwt_grant(
+                              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/_client.py", line 299, in jwt_grant
+    response_data = _token_endpoint_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/_client.py", line 259, in _token_endpoint_request
+    response_status_ok, response_data, retryable_error = _token_endpoint_request_no_throw(
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+               ^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/transport/requests.py", line 194, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x105df9640>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py", line 24, in <module>
+    main()
+  File "/Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py", line 20, in main
+    execute_from_command_line(sys.argv)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/__init__.py", line 442, in execute_from_command_line
+    utility.execute()
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/__init__.py", line 436, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/base.py", line 416, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/base.py", line 460, in execute
+    output = self.handle(*args, **options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/simjuheun/Desktop/개인프로젝트/Jacommi/core/management/commands/push_today.py", line 66, in handle
+    res = messaging.send_each_for_multicast(msg)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 240, in send_each_for_multicast
+    return _get_messaging_service(app).send_each(messages, dry_run)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 455, in send_each
+    raise exceptions.UnknownError(
+firebase_admin.exceptions.UnknownError: Unknown error while making remote service calls: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x105df9640>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+ERROR conda.cli.main_run:execute(125): `conda run python /Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py push_today` failed. (See above for error)
+[INFO] 2025-11-03 14:00:00 push_today start
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/socket.py", line 978, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connection.py", line 753, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x1112fd310>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1112fd310>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/transport/requests.py", line 187, in __call__
+    response = self.session.request(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1112fd310>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 452, in send_each
+    responses = list(executor.map(send_data, message_data))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 440, in send_data
+    resp = self._client.body(
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/_http_client.py", line 148, in body
+    resp = self.request(method, url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/_http_client.py", line 135, in request
+    resp = self._session.request(method, self.base_url + url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/transport/requests.py", line 535, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/credentials.py", line 228, in before_request
+    self._blocking_refresh(request)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/credentials.py", line 191, in _blocking_refresh
+    self.refresh(request)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/credentials.py", line 365, in refresh
+    self._refresh_token(request)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/service_account.py", line 459, in _refresh_token
+    access_token, expiry, _ = _client.jwt_grant(
+                              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/_client.py", line 299, in jwt_grant
+    response_data = _token_endpoint_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/_client.py", line 259, in _token_endpoint_request
+    response_status_ok, response_data, retryable_error = _token_endpoint_request_no_throw(
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+               ^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/transport/requests.py", line 194, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1112fd310>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py", line 24, in <module>
+    main()
+  File "/Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py", line 20, in main
+    execute_from_command_line(sys.argv)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/__init__.py", line 442, in execute_from_command_line
+    utility.execute()
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/__init__.py", line 436, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/base.py", line 416, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/base.py", line 460, in execute
+    output = self.handle(*args, **options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/simjuheun/Desktop/개인프로젝트/Jacommi/core/management/commands/push_today.py", line 66, in handle
+    res = messaging.send_each_for_multicast(msg)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 240, in send_each_for_multicast
+    return _get_messaging_service(app).send_each(messages, dry_run)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 455, in send_each
+    raise exceptions.UnknownError(
+firebase_admin.exceptions.UnknownError: Unknown error while making remote service calls: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1112fd310>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+ERROR conda.cli.main_run:execute(125): `conda run python /Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py push_today` failed. (See above for error)
+[INFO] 2025-11-03 15:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-11-03 15:00:06 push_today end
+----------------------------------------
+[INFO] 2025-11-03 16:00:01 push_today start
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/socket.py", line 978, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connection.py", line 753, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x103ac1760>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x103ac1760>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/transport/requests.py", line 187, in __call__
+    response = self.session.request(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x103ac1760>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 452, in send_each
+    responses = list(executor.map(send_data, message_data))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 440, in send_data
+    resp = self._client.body(
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/_http_client.py", line 148, in body
+    resp = self.request(method, url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/_http_client.py", line 135, in request
+    resp = self._session.request(method, self.base_url + url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/transport/requests.py", line 535, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/credentials.py", line 228, in before_request
+    self._blocking_refresh(request)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/credentials.py", line 191, in _blocking_refresh
+    self.refresh(request)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/credentials.py", line 365, in refresh
+    self._refresh_token(request)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/service_account.py", line 459, in _refresh_token
+    access_token, expiry, _ = _client.jwt_grant(
+                              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/_client.py", line 299, in jwt_grant
+    response_data = _token_endpoint_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/_client.py", line 259, in _token_endpoint_request
+    response_status_ok, response_data, retryable_error = _token_endpoint_request_no_throw(
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+               ^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/transport/requests.py", line 194, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x103ac1760>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py", line 24, in <module>
+    main()
+  File "/Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py", line 20, in main
+    execute_from_command_line(sys.argv)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/__init__.py", line 442, in execute_from_command_line
+    utility.execute()
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/__init__.py", line 436, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/base.py", line 416, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/base.py", line 460, in execute
+    output = self.handle(*args, **options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/simjuheun/Desktop/개인프로젝트/Jacommi/core/management/commands/push_today.py", line 66, in handle
+    res = messaging.send_each_for_multicast(msg)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 240, in send_each_for_multicast
+    return _get_messaging_service(app).send_each(messages, dry_run)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 455, in send_each
+    raise exceptions.UnknownError(
+firebase_admin.exceptions.UnknownError: Unknown error while making remote service calls: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x103ac1760>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+ERROR conda.cli.main_run:execute(125): `conda run python /Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py push_today` failed. (See above for error)
+[INFO] 2025-11-03 17:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-11-03 17:00:06 push_today end
+----------------------------------------
+[INFO] 2025-11-03 19:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-11-03 19:00:06 push_today end
+----------------------------------------
+[INFO] 2025-11-04 09:01:42 push_today start
+No DailySet for today
+
+[INFO] 2025-11-04 09:01:47 push_today end
+----------------------------------------
+[INFO] 2025-11-04 12:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-11-04 12:00:05 push_today end
+----------------------------------------
+[INFO] 2025-11-04 13:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-11-04 13:00:05 push_today end
+----------------------------------------
+[INFO] 2025-11-04 14:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-11-04 14:00:06 push_today end
+----------------------------------------
+[INFO] 2025-11-05 12:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-11-05 12:00:06 push_today end
+----------------------------------------
+[INFO] 2025-11-05 13:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-11-05 13:00:06 push_today end
+----------------------------------------
+[INFO] 2025-11-06 11:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-11-06 11:00:05 push_today end
+----------------------------------------
+[INFO] 2025-11-06 12:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-11-06 12:00:04 push_today end
+----------------------------------------
+[INFO] 2025-11-06 13:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-11-06 13:00:05 push_today end
+----------------------------------------
+[INFO] 2025-11-06 15:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-11-06 15:00:04 push_today end
+----------------------------------------
+[INFO] 2025-11-06 16:00:01 push_today start
+No DailySet for today
+
+[INFO] 2025-11-06 16:00:04 push_today end
+----------------------------------------
+[INFO] 2025-11-06 17:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-11-06 17:00:04 push_today end
+----------------------------------------
+[INFO] 2025-11-06 18:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-11-06 18:00:04 push_today end
+----------------------------------------
+[INFO] 2025-11-06 19:00:01 push_today start
+No DailySet for today
+
+[INFO] 2025-11-06 19:00:05 push_today end
+----------------------------------------
+[INFO] 2025-11-07 13:06:20 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-11-07 13:06:30 push_today end
+----------------------------------------
+[INFO] 2025-11-07 14:00:49 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-11-07 14:00:54 push_today end
+----------------------------------------
+[INFO] 2025-11-07 15:00:01 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-11-07 15:00:06 push_today end
+----------------------------------------
+[INFO] 2025-11-07 16:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-11-07 16:00:05 push_today end
+----------------------------------------
+[INFO] 2025-11-07 17:00:01 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-11-07 17:00:05 push_today end
+----------------------------------------
+[INFO] 2025-11-07 18:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-11-07 18:00:06 push_today end
+----------------------------------------
+[INFO] 2025-11-07 19:00:00 push_today start
+Push sent: 2/2 success
+
+[INFO] 2025-11-07 19:00:05 push_today end
+----------------------------------------
+[INFO] 2025-11-09 14:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-11-09 14:00:04 push_today end
+----------------------------------------
+[INFO] 2025-11-09 18:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-11-09 18:00:05 push_today end
+----------------------------------------
+[INFO] 2025-11-09 20:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-11-09 20:00:04 push_today end
+----------------------------------------
+[INFO] 2025-11-10 12:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-11-10 12:00:05 push_today end
+----------------------------------------
+[INFO] 2025-11-10 13:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-11-10 13:00:05 push_today end
+----------------------------------------
+[INFO] 2025-11-10 14:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-11-10 14:00:04 push_today end
+----------------------------------------
+[INFO] 2025-11-10 15:00:00 push_today start
+No DailySet for today
+
+[INFO] 2025-11-10 15:00:05 push_today end
+----------------------------------------
+[INFO] 2025-11-10 16:00:00 push_today start
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/socket.py", line 978, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connection.py", line 753, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x1058c5400>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1058c5400>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/transport/requests.py", line 187, in __call__
+    response = self.session.request(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1058c5400>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 452, in send_each
+    responses = list(executor.map(send_data, message_data))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 440, in send_data
+    resp = self._client.body(
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/_http_client.py", line 148, in body
+    resp = self.request(method, url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/_http_client.py", line 135, in request
+    resp = self._session.request(method, self.base_url + url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/transport/requests.py", line 535, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/credentials.py", line 228, in before_request
+    self._blocking_refresh(request)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/credentials.py", line 191, in _blocking_refresh
+    self.refresh(request)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/credentials.py", line 365, in refresh
+    self._refresh_token(request)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/service_account.py", line 459, in _refresh_token
+    access_token, expiry, _ = _client.jwt_grant(
+                              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/_client.py", line 299, in jwt_grant
+    response_data = _token_endpoint_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/_client.py", line 259, in _token_endpoint_request
+    response_status_ok, response_data, retryable_error = _token_endpoint_request_no_throw(
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+               ^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/google/auth/transport/requests.py", line 194, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1058c5400>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py", line 24, in <module>
+    main()
+  File "/Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py", line 20, in main
+    execute_from_command_line(sys.argv)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/__init__.py", line 442, in execute_from_command_line
+    utility.execute()
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/__init__.py", line 436, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/base.py", line 416, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/django/core/management/base.py", line 460, in execute
+    output = self.handle(*args, **options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/simjuheun/Desktop/개인프로젝트/Jacommi/core/management/commands/push_today.py", line 66, in handle
+    res = messaging.send_each_for_multicast(msg)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 240, in send_each_for_multicast
+    return _get_messaging_service(app).send_each(messages, dry_run)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Jacommi/lib/python3.12/site-packages/firebase_admin/messaging.py", line 455, in send_each
+    raise exceptions.UnknownError(
+firebase_admin.exceptions.UnknownError: Unknown error while making remote service calls: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1058c5400>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+ERROR conda.cli.main_run:execute(125): `conda run python /Users/simjuheun/Desktop/개인프로젝트/Jacommi/manage.py push_today` failed. (See above for error)

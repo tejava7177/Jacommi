@@ -1,55 +1,98 @@
+{% load static %}
 <!doctype html>
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>오늘의 일본어 5문장</title>
-  <script>
-    function speakJa(text){ const u=new SpeechSynthesisUtterance(text); u.lang='ja-JP'; speechSynthesis.speak(u); }
-  </script>
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+  <script defer src="{% static 'main.js' %}"></script>
 </head>
 <body>
-  <h1>오늘의 일본어 5문장</h1>
-  <a href="/api/auth/google/login">구글로 로그인/연동하기</a>
-  <p><a href="/health">/health</a> | <a href="/api/today">/api/today</a></p>
+  <header class="appbar">
+    <div class="container appbar__inner">
+      <h1 class="brand">Jacommi</h1>
 
-  {% if payload %}
-    <h3>{{ payload.topic }}</h3>
-    <ol>
-      {% for s in payload.sentences %}
-        <li>
-          <div>
-            <b>{{ s.jp }}</b>
-            <button onclick="speakJa('{{ s.jp|escapejs }}')">▶︎ 재생</button>
-          </div>
-          <div>{{ s.ko }}</div>
-        </li>
-      {% endfor %}
-    </ol>
-  {% else %}
-    <p>아직 생성된 세트가 없어요. 대신 <a href="/api/today">/api/today</a>에서 더미 데이터를 확인할 수 있습니다.</p>
-  {% endif %}
-</body>
-  <hr>
-  <button id="enable-noti">알림 권한 허용 & 토큰 등록</button>
-  <div id="noti-status" style="font-size:12px; opacity:0.8;"></div>
+      <nav class="appbar__right">
+        {% if request.user.is_authenticated %}
+          <span class="chip chip--success">로그인됨</span>
+          <a class="link subtle" href="/admin/">관리</a>
+        {% else %}
+          <a class="btn btn--primary" href="/api/auth/google/login">구글로 로그인/연동</a>
+        {% endif %}
+      </nav>
+    </div>
+  </header>
 
-  <!-- Load FCM client code as an ES module -->
-  <script type="module" src="/static/main.js"></script>
+  <main class="container fade-in">
+    <section class="hero">
+      <div>
+        <h2 class="title">오늘의 일본어 5문장</h2>
+        <p class="subtitle">업무 회의/협업에서 바로 쓰는 비즈니스 회화</p>
+      </div>
+
+      <div class="actions">
+        <button id="btn-noti" class="btn">
+          🔔 알림 허용 & 토큰 등록
+        </button>
+        <a class="btn btn--ghost" href="/api/today" target="_blank">API 보기</a>
+      </div>
+    </section>
+
+    {% if payload %}
+      <section class="card">
+        <div class="card__header">
+          <h3 class="topic">{{ payload.topic }}</h3>
+          <span class="badge">{{ payload.date }}</span>
+        </div>
+
+        <ol class="sentences">
+          {% for s in payload.sentences %}
+          <li class="sentence">
+            <div class="sentence__ja">
+              <button class="icon-btn" aria-label="재생" onclick="speakJa('{{ s.jp|escapejs }}')">▶︎</button>
+              <span class="ja">{{ s.jp }}</span>
+            </div>
+            <div class="sentence__ko">{{ s.ko }}</div>
+
+            <div class="sentence__tools">
+              <button class="tool" onclick="navigator.clipboard.writeText('{{ s.jp|escapejs }}');">일본어 복사</button>
+              <button class="tool" onclick="navigator.clipboard.writeText('{{ s.ko|escapejs }}');">한국어 복사</button>
+            </div>
+          </li>
+          {% endfor %}
+        </ol>
+      </section>
+    {% else %}
+      <section class="empty card">
+        <h3>아직 생성된 문장이 없습니다</h3>
+        <p>자정에 자동 생성되며, 관리자가 수동으로도 생성할 수 있습니다.</p>
+        <a class="link subtle" href="/admin/">관리자 바로가기</a>
+      </section>
+    {% endif %}
+  </main>
+
+  <footer class="container footer">
+    <span class="muted">© Jacommi</span>
+    <a class="link subtle" href="/health">health</a>
+  </footer>
+
   <script>
-    // Provide a user gesture to trigger permission + token registration
-    document.getElementById('enable-noti')?.addEventListener('click', async () => {
-      const el = document.getElementById('noti-status');
-      try {
-        if (window.registerFCM) {
-          el.textContent = '요청 중...';
-          await window.registerFCM();
-          el.textContent = '완료! 브라우저 콘솔에서 토큰을 확인하세요.';
-        } else {
-          el.textContent = 'main.js 로딩 전입니다. 새로고침 후 다시 시도해주세요.';
-        }
-      } catch (e) {
-        el.textContent = '실패: ' + e;
+    // TTS (브라우저 내장)
+    function speakJa(text){
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'ja-JP';
+      speechSynthesis.speak(u);
+    }
+
+    // 알림 버튼 -> main.js 에 있는 register 로 위임 (있으면 사용)
+    document.getElementById('btn-noti')?.addEventListener('click', () => {
+      if (window.requestFcmPermissionAndRegister) {
+        window.requestFcmPermissionAndRegister();
+      } else {
+        alert('알림 초기화 스크립트가 로드되지 않았습니다.');
       }
     });
   </script>
+</body>
 </html>
