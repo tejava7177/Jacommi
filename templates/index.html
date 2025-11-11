@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>오늘의 일본어 5문장</title>
   <link rel="stylesheet" href="{% static 'styles.css' %}">
-  <script defer src="{% static 'main.js' %}"></script>
+{#  <script defer src="{% static 'main.js' %}"></script>#}
+    <script type="module" src="{% static 'main.js' %}"></script>
 </head>
 <body>
   <header class="appbar">
@@ -89,12 +90,16 @@
       speechSynthesis.speak(u);
     }
 
-    // 알림 버튼 -> main.js 에 있는 register 로 위임 (있으면 사용)
+    // 알림 버튼 -> main.js 내 초기화 함수에 위임 (이름 호환 처리)
     document.getElementById('btn-noti')?.addEventListener('click', () => {
-      if (window.requestFcmPermissionAndRegister) {
-        window.requestFcmPermissionAndRegister();
+      const initFn =
+        window.requestFcmPermissionAndRegister ||
+        window.initNotifications; // 이전 이름 호환
+      if (typeof initFn === 'function') {
+        initFn();
       } else {
-        alert('알림 초기화 스크립트가 로드되지 않았습니다.');
+        alert('알림 초기화 스크립트가 로드되지 않았습니다.\n' +
+              'main.js가 200 OK로 로드되는지와 Service Worker 경로(/static/firebase-messaging-sw.js)를 확인하세요.');
       }
     });
   </script>
