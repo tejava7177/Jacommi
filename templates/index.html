@@ -20,8 +20,9 @@
       <img src="{{ ga.photo_url }}" alt="{{ ga.email }}" referrerpolicy="no-referrer">
     </a>
   {% elif request.user.is_authenticated %}
-    <span class="chip chip--success">로그인됨</span>
-    <a class="link subtle" href="/admin/">관리</a>
+    <a class="avatar avatar--fallback" href="/admin/" title="{{ request.user.email|default:request.user.username }}">
+      <span>{{ request.user.username|first|upper }}</span>
+    </a>
   {% else %}
     <a class="btn btn--primary" href="/api/auth/google/login">구글로 로그인/연동</a>
   {% endif %}
@@ -37,10 +38,18 @@
       </div>
 
       <div class="actions">
-        <button id="btn-noti" class="btn">
-          🔔 알림 허용 & 토큰 등록
+        <!-- 알림 토글: 종 아이콘 버튼 -->
+        <button id="notifToggle" class="icon-btn bell off" aria-pressed="false" title="알림 꺼짐">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2Zm6-6v-5a6 6 0 1 0-12 0v5l-2 2v1h16v-1l-2-2Z" fill="currentColor" opacity="0.75"/>
+          </svg>
+          <span class="label">알림</span>
         </button>
-        <a class="btn btn--ghost" href="/api/today" target="_blank">API 보기</a>
+
+        <!-- 수동 캘린더 저장 버튼 -->
+        <button id="saveTodayBtn" class="btn btn--ghost">오늘 문장 캘린더에 저장하기</button>
+
+{#        <a class="btn btn--ghost" href="/api/today" target="_blank">API 보기</a>#}
       </div>
     </section>
 
@@ -89,19 +98,6 @@
       u.lang = 'ja-JP';
       speechSynthesis.speak(u);
     }
-
-    // 알림 버튼 -> main.js 내 초기화 함수에 위임 (이름 호환 처리)
-    document.getElementById('btn-noti')?.addEventListener('click', () => {
-      const initFn =
-        window.requestFcmPermissionAndRegister ||
-        window.initNotifications; // 이전 이름 호환
-      if (typeof initFn === 'function') {
-        initFn();
-      } else {
-        alert('알림 초기화 스크립트가 로드되지 않았습니다.\n' +
-              'main.js가 200 OK로 로드되는지와 Service Worker 경로(/static/firebase-messaging-sw.js)를 확인하세요.');
-      }
-    });
   </script>
 </body>
 </html>

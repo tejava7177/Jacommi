@@ -32,9 +32,33 @@ def fcm_register(request):
         # 사용자 로그인 연동 시 user=request.user if request.user.is_authenticated else None
         obj, created = FcmToken.objects.update_or_create(
             token=token,
-            defaults={"active": True, "platform": "web"},
+            defaults={
+                "active": True,
+                "platform": "web",
+                "user": request.user if request.user.is_authenticated else None,
+            },
         )
         return JsonResponse({"ok": True, "created": created})
+    except Exception as e:
+        return JsonResponse({"ok": False, "error": str(e)}, status=400)
+
+@csrf_exempt
+def fcm_unregister(request):
+    if request.method != "POST":
+        return JsonResponse({"ok": False, "error": "method_not_allowed"}, status=405)
+    try:
+        data = json.loads(request.body.decode("utf-8"))
+        token = data.get("token")
+        if not token:
+            return JsonResponse({"ok": False, "error": "no_token"}, status=400)
+
+        # 비활성화(soft delete) 처리: active=False
+        updated = FcmToken.objects.filter(token=token).update(active=False)
+        # 사용자가 로그인한 상태라면 해당 사용자 토큰만 제한적으로 비활성화하도록 하고 싶다면:
+        # if request.user.is_authenticated:
+        #     updated = FcmToken.objects.filter(token=token, user=request.user).update(active=False)
+
+        return JsonResponse({"ok": True, "updated": updated})
     except Exception as e:
         return JsonResponse({"ok": False, "error": str(e)}, status=400)
 

@@ -3,6 +3,29 @@ from django.http import JsonResponse
 from django.utils import timezone
 from .models import DailySet
 
+from django.http import JsonResponse
+from django.views.decorators.http import require_POST
+from django.contrib.auth.decorators import login_required
+from .models import GoogleAccount
+from .google_calendar import insert_today_event
+
+@require_POST
+@login_required
+def calendar_insert_today(request):
+    """
+    오늘의 문장을 Google Calendar에 등록하는 API
+    """
+    acc = GoogleAccount.objects.filter(user=request.user).first()
+    if not acc or not acc.refresh_token:
+        return JsonResponse({"ok": False, "error": "google_not_linked"}, status=400)
+
+    try:
+        result = insert_today_event(acc)
+        return JsonResponse({"ok": True, "result": result})
+    except Exception as e:
+        return JsonResponse({"ok": False, "error": str(e)}, status=500)
+
+
 def today_api(request):
     today = timezone.localdate()
     ds = DailySet.objects.filter(date=today).first()
