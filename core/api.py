@@ -12,18 +12,32 @@ from .google_calendar import insert_today_event
 @require_POST
 @login_required
 def calendar_insert_today(request):
-    """
-    오늘의 문장을 Google Calendar에 등록하는 API
-    """
-    acc = GoogleAccount.objects.filter(user=request.user).first()
-    if not acc or not acc.refresh_token:
+    if request.method != "POST":
+        return JsonResponse({"ok": False, "error": "method_not_allowed"}, status=405)
+
+    if not request.user.is_authenticated:
+        return JsonResponse({"ok": False, "error": "unauthorized"}, status=401)
+
+    ga = GoogleAccount.objects.filter(user=request.user).first()
+    if not ga:
         return JsonResponse({"ok": False, "error": "google_not_linked"}, status=400)
 
-    try:
-        result = insert_today_event(acc)
-        return JsonResponse({"ok": True, "result": result})
-    except Exception as e:
-        return JsonResponse({"ok": False, "error": str(e)}, status=500)
+    today = timezone.localdate()
+
+    # ✅ 중복 방지: 이미 오늘 저장한 적 있음
+    if ga.last_event_date == today:
+        return JsonResponse({"ok": False, "error": "already_inserted"}, status=409)
+
+    # 실제 삽입
+    ok, info = insert_today_event(ga)  # (True, event_id) / (False, "에러메시지")
+    if not ok:
+        return JsonResponse({"ok": False, "error": "insert_failed", "detail": info}, status=500)
+
+    # 성공 시 오늘로 마킹
+    ga.last_event_date = today
+    ga.save(update_fields=["last_event_date"])
+
+    return JsonResponse({"ok": True, "event_id": info})
 
 
 def today_api(request):
