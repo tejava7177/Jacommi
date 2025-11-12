@@ -46,3 +46,22 @@ class GoogleAccount(models.Model):
 
     def __str__(self):
         return f"{self.email or self.user.username}"
+
+
+class SavedSentence(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="saved_sentences")
+    date = models.DateField()                 # DailySet 날짜
+    topic = models.CharField(max_length=200)  # DailySet 토픽(표시용)
+    idx = models.IntegerField(default=0)      # 0~4 (몇 번째 문장인지)
+    jp = models.TextField()
+    ko = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = (("user", "date", "idx"),)  # 같은 날 같은 위치 문장 중복 저장 방지
+        indexes = [
+            models.Index(fields=["user", "date"]),
+        ]
+
+    def __str__(self):
+        return f"[{self.date} #{self.idx}] {self.user.username} - {self.jp[:20]}"

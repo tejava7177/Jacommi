@@ -11,24 +11,29 @@
 </head>
 <body>
   <header class="appbar">
-    <div class="container appbar__inner">
-      <h1 class="brand">Jacommi</h1>
+  <div class="container appbar__inner">
+    <h1 class="brand">Jacommi</h1>
 
-      <nav class="appbar__right">
-  {% if request.user.is_authenticated and ga and ga.photo_url %}
-    <a class="avatar" href="/admin/" title="{{ ga.email }}">
-      <img src="{{ ga.photo_url }}" alt="{{ ga.email }}" referrerpolicy="no-referrer">
-    </a>
-  {% elif request.user.is_authenticated %}
-    <a class="avatar avatar--fallback" href="/admin/" title="{{ request.user.email|default:request.user.username }}">
-      <span>{{ request.user.username|first|upper }}</span>
-    </a>
-  {% else %}
-    <a class="btn btn--primary" href="/api/auth/google/login">구글로 로그인/연동</a>
-  {% endif %}
-</nav>
-    </div>
-  </header>
+    <nav class="appbar__right">
+      {% if request.user.is_authenticated and ga and ga.photo_url %}
+        <!-- ✅ 프로필 이미지가 있는 경우 -->
+        <a class="avatar" href="/mypage" title="나의 문장 보기 ({{ ga.email }})">
+          <img src="{{ ga.photo_url }}" alt="{{ ga.email }}" referrerpolicy="no-referrer">
+        </a>
+      {% elif request.user.is_authenticated %}
+        <!-- ✅ 로그인은 되어있지만 프로필 이미지가 없는 경우 -->
+        <a class="avatar avatar--fallback" href="/mypage" title="나의 문장 보기 ({{ request.user.email|default:request.user.username }})">
+          <span>{{ request.user.username|first|upper }}</span>
+        </a>
+      {% else %}
+        <!-- ✅ 로그인 안 된 경우 -->
+        <a class="btn btn--primary" href="/api/auth/google/login">
+          구글로 로그인/연동
+        </a>
+      {% endif %}
+    </nav>
+  </div>
+</header>
 
   <main class="container fade-in">
     <section class="hero">
@@ -54,36 +59,48 @@
     </section>
 
     {% if payload %}
-      <section class="card">
-        <div class="card__header">
-          <h3 class="topic">{{ payload.topic }}</h3>
-          <span class="badge">{{ payload.date }}</span>
+  <section class="card">
+    <div class="card__header">
+      <h3 class="topic">{{ payload.topic }}</h3>
+      <span class="badge">{{ payload.date }}</span>
+    </div>
+
+    <ol class="sentences">
+      {% for s in payload.sentences %}
+      <li class="sentence">
+        <div class="sentence__ja">
+          <button class="icon-btn" aria-label="재생" onclick="speakJa('{{ s.jp|escapejs }}')">▶︎</button>
+          <span class="ja">{{ s.jp }}</span>
         </div>
+        <div class="sentence__ko">{{ s.ko }}</div>
 
-        <ol class="sentences">
-          {% for s in payload.sentences %}
-          <li class="sentence">
-            <div class="sentence__ja">
-              <button class="icon-btn" aria-label="재생" onclick="speakJa('{{ s.jp|escapejs }}')">▶︎</button>
-              <span class="ja">{{ s.jp }}</span>
-            </div>
-            <div class="sentence__ko">{{ s.ko }}</div>
+        <div class="sentence__tools">
+          <button class="tool" onclick="navigator.clipboard.writeText('{{ s.jp|escapejs }}');">일본어 복사</button>
+          <button class="tool" onclick="navigator.clipboard.writeText('{{ s.ko|escapejs }}');">한국어 복사</button>
 
-            <div class="sentence__tools">
-              <button class="tool" onclick="navigator.clipboard.writeText('{{ s.jp|escapejs }}');">일본어 복사</button>
-              <button class="tool" onclick="navigator.clipboard.writeText('{{ s.ko|escapejs }}');">한국어 복사</button>
-            </div>
-          </li>
-          {% endfor %}
-        </ol>
-      </section>
-    {% else %}
-      <section class="empty card">
-        <h3>아직 생성된 문장이 없습니다</h3>
-        <p>자정에 자동 생성되며, 관리자가 수동으로도 생성할 수 있습니다.</p>
-        <a class="link subtle" href="/admin/">관리자 바로가기</a>
-      </section>
-    {% endif %}
+          <!-- ✅ 추가: 나만의 문장 저장 버튼 -->
+          <button
+            class="tool save-sent-btn"
+            data-idx="{{ forloop.counter0 }}"
+            data-date="{{ payload.date }}"
+            data-topic="{{ payload.topic }}"
+            data-jp="{{ s.jp|escapejs }}"
+            data-ko="{{ s.ko|escapejs }}"
+          >
+            ★ 저장
+          </button>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+{% else %}
+  <section class="empty card">
+    <h3>아직 생성된 문장이 없습니다</h3>
+    <p>자정에 자동 생성되며, 관리자가 수동으로도 생성할 수 있습니다.</p>
+    <a class="link subtle" href="/admin/">관리자 바로가기</a>
+  </section>
+{% endif %}
   </main>
 
   <footer class="container footer">

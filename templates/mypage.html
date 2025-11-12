@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>나의 문장 · Jacommi</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <script type="module" src="/static/main.js"></script>
+</head>
+<body class="app">
+
+  <!-- 공통 AppBar (index와 동일) -->
+  <header class="appbar">
+    <div class="container appbar__inner">
+      <h1 class="brand"><a href="/" class="brand__link">Jacommi</a></h1>
+
+      <nav class="appbar__right">
+        {% if request.user.is_authenticated and ga and ga.photo_url %}
+          <a class="avatar" href="/mypage" title="{{ ga.email }}">
+            <img src="{{ ga.photo_url }}" alt="{{ ga.email }}" referrerpolicy="no-referrer">
+          </a>
+        {% elif request.user.is_authenticated %}
+          <a class="avatar avatar--fallback" href="/mypage" title="{{ request.user.email|default:request.user.username }}">
+            <span>{{ request.user.username|first|upper }}</span>
+          </a>
+        {% else %}
+          <a class="btn btn--primary" href="/api/auth/google/login">구글로 로그인/연동</a>
+        {% endif %}
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-head">
+      <h2 class="title">나의 문장</h2>
+      <a class="link subtle" href="/">← 돌아가기</a>
+    </div>
+
+    {% if items %}
+      <ol class="sentences">
+        {% for it in items %}
+        <li class="sentence card sentence--mine" data-id="{{ it.id }}">
+          <div class="sentence__ja">
+{#            <button class="icon-btn" aria-label="재생" onclick="speakJa('{{ it.jp|escapejs }}')">▶︎</button>#}
+            <span class="ja">{{ it.jp }}</span>
+          </div>
+          <div class="sentence__ko">{{ it.ko }}</div>
+
+          <div class="sentence__tools">
+            <button class="tool" onclick="navigator.clipboard.writeText('{{ it.jp|escapejs }}')">일본어 복사</button>
+            <button class="tool" onclick="navigator.clipboard.writeText('{{ it.ko|escapejs }}')">한국어 복사</button>
+            <button class="tool tool--danger btn-delete" data-id="{{ it.id }}">삭제</button>
+          </div>
+        </li>
+        {% endfor %}
+      </ol>
+    {% else %}
+      <section class="empty card">
+        <h3>아직 저장한 문장이 없어요.</h3>
+        <p>메인 화면에서 각 문장 옆 <b>저장</b> 버튼을 눌러 보관할 수 있어요.</p>
+        <a class="btn" href="/">메인으로 이동</a>
+      </section>
+    {% endif %}
+  </main>
+
+  <script>
+  // CSRF 토큰 가져오기
+  function getCsrf() {
+    // ✅ \s 한 개: 공백 매칭
+    const m = document.cookie.match(/(?:^|;\s*)csrftoken=([^;]+)/);
+    return m ? decodeURIComponent(m[1]) : "";
+  }
+
+  document.addEventListener("click", async (e) => {
+    const btn = e.target.closest(".btn-delete");
+    if (!btn) return;
+
+    const id = btn.dataset.id;
+    if (!id) return;
+
+    if (!confirm("이 문장을 삭제할까요?")) return;
+
+    try {
+      // ✅ URL 패턴과 동일하게 끝 슬래시 포함
+      const res = await fetch(`/api/sentences/delete/${id}/`, {
+        method: "POST",
+        headers: { "X-CSRFToken": getCsrf() }
+      });
+
+      if (res.ok) {
+        document.querySelector(`.sentence[data-id="${id}"]`)?.remove();
+        return;
+      }
+
+      // 상태별 안내(선택)
+      if (res.status === 404) {
+        alert("이미 삭제되었거나 권한이 없어요.");
+      } else if (res.status === 401) {
+        alert("로그인이 필요합니다.");
+      } else {
+        const data = await res.json().catch(() => ({}));
+        console.error("delete error:", data);
+        alert("삭제에 실패했습니다.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("삭제 요청 중 오류가 발생했습니다.");
+    }
+  });
+</script>
+</body>
+</html>
