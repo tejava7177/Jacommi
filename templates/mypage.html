@@ -11,24 +11,29 @@
 
   <!-- 공통 AppBar (index와 동일) -->
   <header class="appbar">
-    <div class="container appbar__inner">
-      <h1 class="brand"><a href="/" class="brand__link">Jacommi</a></h1>
+  <div class="container appbar__inner">
+    <h1 class="brand"><a href="/" class="brand__link">Jacommi</a></h1>
 
-      <nav class="appbar__right">
-        {% if request.user.is_authenticated and ga and ga.photo_url %}
+    <nav class="appbar__right">
+      {% if request.user.is_authenticated %}
+        <a class="btn btn--ghost" href="{% url 'logout' %}">로그아웃</a>
+
+        {% if ga and ga.photo_url %}
           <a class="avatar" href="/mypage" title="{{ ga.email }}">
             <img src="{{ ga.photo_url }}" alt="{{ ga.email }}" referrerpolicy="no-referrer">
           </a>
-        {% elif request.user.is_authenticated %}
+        {% else %}
           <a class="avatar avatar--fallback" href="/mypage" title="{{ request.user.email|default:request.user.username }}">
             <span>{{ request.user.username|first|upper }}</span>
           </a>
-        {% else %}
-          <a class="btn btn--primary" href="/api/auth/google/login">구글로 로그인/연동</a>
         {% endif %}
-      </nav>
-    </div>
-  </header>
+
+      {% else %}
+        <a class="btn btn--primary" href="/api/auth/google/login">구글로 로그인/연동</a>
+      {% endif %}
+    </nav>
+  </div>
+</header>
 
   <main class="container">
     <div class="page-head">
