@@ -23,7 +23,7 @@ from core.views_auth import google_login, google_callback
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
-    path("api/", include("core.api")),
+    # path("api/", include("core.api")),
 
     path("api/admin/", include("core.api_admin")),
 

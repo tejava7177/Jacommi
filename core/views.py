@@ -20,6 +20,8 @@ from django.contrib.auth.decorators import login_required
 
 from .models import DailySet, GoogleAccount, SavedSentence
 
+from django.contrib.auth import logout
+from django.shortcuts import redirect
 
 def health(request):
     return JsonResponse({"status": "ok"})
@@ -141,3 +143,10 @@ def api_sentence_delete(request, sentence_id: int):
         return JsonResponse({"ok": False, "error": "not_found"}, status=404)
     obj.delete()
     return JsonResponse({"ok": True})
+
+def logout_view(request):
+    """
+    간단 로그아웃 후 메인 페이지(/)로 리다이렉트
+    """
+    logout(request)
+    return redirect("/")

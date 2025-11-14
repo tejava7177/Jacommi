@@ -1,63 +1,67 @@
-from django.urls import path
-from django.http import JsonResponse
-from django.utils import timezone
-from .models import DailySet
-
+# core/api.py (또는 views.py 안의 일부로)
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.contrib.auth.decorators import login_required
+
 from .models import GoogleAccount
 from .google_calendar import insert_today_event
+
 
 @require_POST
 @login_required
 def calendar_insert_today(request):
-    if request.method != "POST":
-        return JsonResponse({"ok": False, "error": "method_not_allowed"}, status=405)
-
-    if not request.user.is_authenticated:
-        return JsonResponse({"ok": False, "error": "unauthorized"}, status=401)
-
+    """
+    로그인한 사용자의 GoogleAccount 를 찾아
+    오늘 DailySet 내용을 캘린더에 1회 저장한다.
+    """
     ga = GoogleAccount.objects.filter(user=request.user).first()
-    if not ga:
-        return JsonResponse({"ok": False, "error": "google_not_linked"}, status=400)
+    if not ga or not ga.refresh_token:
+        return JsonResponse(
+            {"ok": False, "error": "no_google_auth"},
+            status=400,
+        )
 
-    today = timezone.localdate()
+    try:
+        result = insert_today_event(ga)
+    except Exception as e:
+        # 디버깅 편하게 로그를 찍고 싶으면 여기서 print 또는 logger 사용
+        return JsonResponse(
+            {"ok": False, "error": "server_error", "detail": str(e)},
+            status=500,
+        )
 
-    # ✅ 중복 방지: 이미 오늘 저장한 적 있음
-    if ga.last_event_date == today:
-        return JsonResponse({"ok": False, "error": "already_inserted"}, status=409)
+    # insert_today_event 는 항상 dict 를 반환한다고 가정
+    if not isinstance(result, dict):
+        return JsonResponse(
+            {"ok": False, "error": "invalid_result"},
+            status=500,
+        )
 
-    # 실제 삽입
-    ok, info = insert_today_event(ga)  # (True, event_id) / (False, "에러메시지")
-    if not ok:
-        return JsonResponse({"ok": False, "error": "insert_failed", "detail": info}, status=500)
+    # 이미 오늘 것 있음 → 409
+    if not result.get("ok") and result.get("reason") == "already_exists":
+        return JsonResponse(
+            {"ok": False, "error": "already_exists"},
+            status=409,
+        )
 
-    # 성공 시 오늘로 마킹
-    ga.last_event_date = today
-    ga.save(update_fields=["last_event_date"])
+    # DailySet 이 없는 경우 → 404 (프론트에서 "오늘 문장이 아직 생성되지 않았어요" 안내 가능)
+    if not result.get("ok") and result.get("reason") == "no_daily_set":
+        return JsonResponse(
+            {"ok": False, "error": "no_daily_set"},
+            status=404,
+        )
 
-    return JsonResponse({"ok": True, "event_id": info})
+    # 정상 저장
+    if result.get("ok"):
+        return JsonResponse(
+            {
+                "ok": True,
+                "link": result.get("htmlLink"),
+            }
+        )
 
-
-def today_api(request):
-    today = timezone.localdate()
-    ds = DailySet.objects.filter(date=today).first()
-    if not ds:
-        # 아직 생성 전이라면 더미(학습 확인용) 반환
-        dummy = {
-            "date": str(today),
-            "topic": "스프린트計画 共有",
-            "sentences": [
-                {"jp": "今日(きょう)のタスクを共有(きょうゆう)します。", "ko": "오늘의 업무를 공유하겠습니다."},
-                {"jp": "進捗(しんちょく)を更新(こうしん)してください。", "ko": "진행 상황을 업데이트해주세요."},
-                {"jp": "見積(みつも)りを再確認(さいかくにん)します。", "ko": "견적을 다시 확인하겠습니다."},
-                {"jp": "レビュー依頼(いらい)を送付(そうふ)しました。", "ko": "리뷰 요청을 보냈습니다."},
-                {"jp": "明日(あした)の会議(かいぎ)に参加(さんか)可能(かのう)ですか。", "ko": "내일 회의 참석 가능하신가요?"},
-            ],
-            "meta": {"level": "B1-B2", "tags": ["회의", "개발", "공유"]},
-        }
-        return JsonResponse(dummy)
-    return JsonResponse(ds.payload)
-
-urlpatterns = [path("today", today_api, name="api_today")]
+    # 그 외 기타 실패
+    return JsonResponse(
+        {"ok": False, "error": result.get("reason", "unknown")},
+        status=400,
+    )

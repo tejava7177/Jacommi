@@ -38,9 +38,13 @@
   <main class="container fade-in">
     <section class="hero">
       <div>
-        <h2 class="title">오늘의 일본어 5문장</h2>
-        <p class="subtitle">업무 회의/협업에서 바로 쓰는 비즈니스 회화</p>
-      </div>
+  <h2 class="title">오늘의 일본어 5문장</h2>
+  {% if payload and payload.meta and payload.meta.ko_desc %}
+    <p class="subtitle">{{ payload.meta.ko_desc }}</p>
+  {% else %}
+    <p class="subtitle">다양한 비즈니스·일상 상황에서 바로 쓰는 회화 표현</p>
+  {% endif %}
+</div>
 
       <div class="actions">
         <!-- 알림 토글: 종 아이콘 버튼 -->
@@ -104,9 +108,16 @@
   </main>
 
   <footer class="container footer">
-    <span class="muted">© Jacommi</span>
-    <a class="link subtle" href="/health">health</a>
-  </footer>
+  <span class="muted">© Jacommi</span>
+
+  <a class="link subtle" href="https://github.com/tejava7177" target="_blank" rel="noopener">
+    <!-- GitHub 아이콘 (SVG) -->
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:6px;">
+      <path d="M12 .5C5.6.5.5 5.6.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.2-1.2-1.6-1.2-1.6-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .9.1-.7.4-1.1.7-1.3-2.6-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.2 1.2a10.7 10.7 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.7.3 2.9.1 3.2.8.8 1.2 1.8 1.2 3.1 0 4.6-2.8 5.6-5.5 5.9.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6A10.9 10.9 0 0 0 23.5 12C23.5 5.6 18.4.5 12 .5Z"/>
+    </svg>
+    GitHub
+  </a>
+</footer>
 
   <script>
     // TTS (브라우저 내장)

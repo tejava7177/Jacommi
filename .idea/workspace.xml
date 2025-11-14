@@ -6,10 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="4bb68edd-5845-46b0-8587-b5943c5d9792" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/management/commands/generate_daily_set.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/management/commands/generate_daily_set.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cron_generate.log" beforeDir="false" afterPath="$PROJECT_DIR$/cron_generate.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jacommi/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Jacommi/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/google_calendar.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/google_calendar.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cron_push.log" beforeDir="false" afterPath="$PROJECT_DIR$/cron_push.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +121,8 @@
       <workItem from="1760102617104" duration="224000" />
       <workItem from="1760145494041" duration="1599000" />
       <workItem from="1762754051739" duration="17138000" />
-      <workItem from="1762960012007" duration="2345000" />
+      <workItem from="1762960012007" duration="2646000" />
+      <workItem from="1763125443482" duration="3498000" />
     </task>
     <servers />
   </component>
