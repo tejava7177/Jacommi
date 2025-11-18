@@ -9,10 +9,11 @@ import os
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "django-insecure-change-me")  # ⚠️ set env in production
 DEBUG = os.getenv("DJANGO_DEBUG", "true").lower() == "true"
 
-ALLOWED_HOSTS = [
-    "127.0.0.1",
-    "localhost",
-]
+ALLOWED_HOSTS = os.getenv(
+    "DJANGO_ALLOWED_HOSTS",
+    "127.0.0.1,localhost",
+).split(",")
+ALLOWED_HOSTS = [h.strip() for h in ALLOWED_HOSTS if h.strip()]
 
 # CSRF: allow local dev + Docker (8000/8001)
 CSRF_TRUSTED_ORIGINS = [
