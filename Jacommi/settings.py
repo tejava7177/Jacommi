@@ -1,26 +1,50 @@
 """
 Django settings for Jacommi project (minimal dev setup).
 """
-
 from pathlib import Path
 import os
 
-# Paths
-BASE_DIR = Path(__file__).resolve().parent.parent
 
 # --- Security / Debug (dev defaults) ---
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "django-insecure-change-me")  # ⚠️ set env in production
 DEBUG = os.getenv("DJANGO_DEBUG", "true").lower() == "true"
-ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+]
 
+# CSRF: allow local dev + Docker (8000/8001)
 CSRF_TRUSTED_ORIGINS = [
     "http://127.0.0.1:8000",
+    "http://127.0.0.1:8001",
+    "http://localhost:8000",
+    "http://localhost:8001",
 ]
 
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
 SECURE_SSL_REDIRECT = False
+
+
+
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# --- Static files ---
+STATIC_URL = "/static/"
+
+# 개발용: 프로젝트 안의 static 디렉터리
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
+# 배포용: collectstatic 이 모아줄 디렉터리
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# DEBUG=False 에서 WhiteNoise가 이 스토리지를 사용해 압축/해시 버전 제공
+if not DEBUG:
+    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 
@@ -41,6 +65,7 @@ INSTALLED_APPS = [
 # --- Middleware ---
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -91,11 +116,6 @@ LANGUAGE_CODE = "ko-kr"
 TIME_ZONE = "Asia/Seoul"
 USE_I18N = True
 USE_TZ = True
-
-# --- Static files ---
-STATIC_URL = "/static/"
-STATIC_DIR = BASE_DIR / "static"
-STATICFILES_DIRS = [STATIC_DIR] if STATIC_DIR.exists() else []
 
 # --- Default primary key ---
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

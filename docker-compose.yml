@@ -1,0 +1,26 @@
+# 로컬 개발용
+# 가장 간단한 형태로 웹 컨테이너 하나만 띄워서 SQLite 그대로 쓰게 해보기
+# 나중에 DB를 Postgres로 바꾸고, Prometheus/Grafana 추가는 다음 단계
+
+version: "3.9"
+
+services:
+  web:
+    build: .
+    container_name: jacommi-web
+    ports:
+      - "8001:8000"
+    env_file:
+      - .env
+    environment:
+      DJANGO_DEBUG: "False"   # 배포 느낌을 내보자. 그래도 정적 파일은 WhiteNoise가 처리
+    restart: unless-stopped
+    # 마운트가 꼭 필요하지 않으면 생략해도 됨.
+    # 개발 중에 코드 실시간 반영이 필요하면 아래 주석을 풀어.
+    # volumes:
+    #   - .:/app
+
+# 정적 볼륨이 필요하면 이런 식으로도 가능 (선택)
+# volumes:
+#   static_volume:
+#     driver: local
