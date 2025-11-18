@@ -96,12 +96,29 @@ TEMPLATES = [
 WSGI_APPLICATION = "Jacommi.wsgi.application"
 
 # --- Database ---
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+
+# DB_HOST 환경변수가 있으면 Postgres, 없으면 sqlite3 사용
+if os.getenv("DB_HOST"):
+    # Docker / 배포 환경: Postgres
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": os.getenv("DB_NAME", "jacommi"),
+            "USER": os.getenv("DB_USER", "jacommi"),
+            "PASSWORD": os.getenv("DB_PASSWORD", "jacommi-password"),
+            "HOST": os.getenv("DB_HOST", "db"),   # docker-compose 서비스 이름
+            "PORT": os.getenv("DB_PORT", "5432"),
+        }
     }
-}
+else:
+    # 로컬 개발용: sqlite
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
+
 
 # --- Password validation ---
 AUTH_PASSWORD_VALIDATORS = [

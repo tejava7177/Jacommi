@@ -39,4 +39,4 @@ build/
 .idea/
 .vscode/
 
-
+.env.docker

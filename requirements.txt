@@ -61,3 +61,5 @@ wheel==0.45.1
 
 gunicorn==22.0.0
 whitenoise
+
+psycopg2-binary>=2.9

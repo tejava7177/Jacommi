@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4bb68edd-5845-46b0-8587-b5943c5d9792" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.env.docker" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Jacommi/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Jacommi/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cron_generate.log" beforeDir="false" afterPath="$PROJECT_DIR$/cron_generate.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cron_push.log" beforeDir="false" afterPath="$PROJECT_DIR$/cron_push.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +123,7 @@
       <workItem from="1762754051739" duration="17138000" />
       <workItem from="1762960012007" duration="2646000" />
       <workItem from="1763125443482" duration="4903000" />
-      <workItem from="1763436921273" duration="3437000" />
+      <workItem from="1763436921273" duration="8581000" />
     </task>
     <servers />
   </component>
