@@ -11,6 +11,8 @@ from django.utils import timezone
 from core.models import DailySet, ApiUsageLog
 from core.usage import estimate_cost
 
+import traceback
+
 
 # ==========================
 # 1. 토픽 카탈로그 / 프롬프트
@@ -397,6 +399,98 @@ class Command(BaseCommand):
             self.stdout.write(self.style.SUCCESS("Generated (dummy, no OPENAI_API_KEY)"))
             return
 
+        # # -----------------
+        # #  실제 OpenAI 호출
+        # # -----------------
+        # try:
+        #     from openai import OpenAI
+        #
+        #     client = OpenAI(api_key=api_key)
+        #
+        #     msgs = [
+        #         {"role": "system", "content": SYSTEM_PROMPT},
+        #         {
+        #             "role": "user",
+        #             "content": _build_user_prompt(date_str, topic, topic_meta),
+        #         },
+        #     ]
+        #
+        #     resp = client.chat.completions.create(
+        #         model=model_name,
+        #         messages=msgs,
+        #         temperature=0.7,
+        #         response_format={"type": "json_object"},
+        #     )
+        #     content = resp.choices[0].message.content
+        #     data = json.loads(content)
+        #
+        #     # 간단 검증
+        #     s = data.get("sentences", [])
+        #     if not (isinstance(s, list) and len(s) == 5):
+        #         raise ValueError("Invalid JSON format from model (sentences length != 5)")
+        #
+        #     # 주제 필드는 모델이 임의로 바꿔도 상관없지만,
+        #     # 우리가 선택한 토픽도 payload.meta 에 같이 넣어둔다.
+        #     meta = data.get("meta") or {}
+        #     meta.setdefault("category", topic_meta.get("category"))
+        #     meta.setdefault("tags", topic_meta.get("tags"))
+        #     meta.setdefault("ko_desc", topic_meta.get("ko_desc"))
+        #     data["meta"] = meta
+        #
+        #     DailySet.objects.create(
+        #         date=target_date,
+        #         topic=data.get("topic", topic),
+        #         payload=data,
+        #     )
+        #
+        #     # usage/cost logging
+        #     usage = getattr(resp, "usage", None)
+        #     prompt_tokens = getattr(usage, "prompt_tokens", 0) if usage else 0
+        #     completion_tokens = getattr(usage, "completion_tokens", 0) if usage else 0
+        #     total_tokens = (
+        #         getattr(usage, "total_tokens", prompt_tokens + completion_tokens)
+        #         if usage
+        #         else (prompt_tokens + completion_tokens)
+        #     )
+        #     cost = estimate_cost(model_name, prompt_tokens, completion_tokens)
+        #
+        #     ApiUsageLog.objects.create(
+        #         date=target_date,
+        #         model=model_name,
+        #         prompt_tokens=prompt_tokens,
+        #         completion_tokens=completion_tokens,
+        #         total_tokens=total_tokens,
+        #         cost_usd=cost,
+        #         meta={"topic": topic, **topic_meta},
+        #     )
+        #
+        #     self.stdout.write(
+        #         self.style.SUCCESS(
+        #             f"Generated (OpenAI) tokens={total_tokens} cost=${cost}"
+        #         )
+        #     )
+        #     return
+        #
+        # except Exception as e:
+        #     # 실패 시 더미로라도 저장해서 서비스는 계속 동작
+        #     data = _fallback_dummy(date_str, topic, topic_meta)
+        #     DailySet.objects.create(
+        #         date=target_date,
+        #         topic=data.get("topic", ""),
+        #         payload=data,
+        #     )
+        #     ApiUsageLog.objects.create(
+        #         date=target_date,
+        #         model=model_name,
+        #         prompt_tokens=0,
+        #         completion_tokens=0,
+        #         total_tokens=0,
+        #         cost_usd=Decimal("0"),
+        #         meta={"fallback_error": str(e), "topic": topic, **topic_meta},
+        #     )
+        #     self.stdout.write(
+        #         self.style.WARNING(f"OpenAI failed, fallback dummy used: {e}")
+        #     )
         # -----------------
         #  실제 OpenAI 호출
         # -----------------
@@ -427,8 +521,7 @@ class Command(BaseCommand):
             if not (isinstance(s, list) and len(s) == 5):
                 raise ValueError("Invalid JSON format from model (sentences length != 5)")
 
-            # 주제 필드는 모델이 임의로 바꿔도 상관없지만,
-            # 우리가 선택한 토픽도 payload.meta 에 같이 넣어둔다.
+            # meta 합치기
             meta = data.get("meta") or {}
             meta.setdefault("category", topic_meta.get("category"))
             meta.setdefault("tags", topic_meta.get("tags"))
@@ -441,7 +534,6 @@ class Command(BaseCommand):
                 payload=data,
             )
 
-            # usage/cost logging
             usage = getattr(resp, "usage", None)
             prompt_tokens = getattr(usage, "prompt_tokens", 0) if usage else 0
             completion_tokens = getattr(usage, "completion_tokens", 0) if usage else 0
@@ -470,6 +562,12 @@ class Command(BaseCommand):
             return
 
         except Exception as e:
+            # 🔍 여기서 진짜 에러 트레이스백을 찍어 보자
+            tb = traceback.format_exc()
+            # stdout/stderr 둘 다 UTF-8 이지만, 혹시 모를 인코딩 이슈를 줄이기 위해 repr 사용
+            self.stderr.write(self.style.ERROR("OpenAI call failed with exception:"))
+            self.stderr.write(tb)
+
             # 실패 시 더미로라도 저장해서 서비스는 계속 동작
             data = _fallback_dummy(date_str, topic, topic_meta)
             DailySet.objects.create(
@@ -477,6 +575,7 @@ class Command(BaseCommand):
                 topic=data.get("topic", ""),
                 payload=data,
             )
+            # 에러 문자열도 repr로 저장 (비 ASCII 문자 때문에 또 터지는 것 방지)
             ApiUsageLog.objects.create(
                 date=target_date,
                 model=model_name,
@@ -484,8 +583,8 @@ class Command(BaseCommand):
                 completion_tokens=0,
                 total_tokens=0,
                 cost_usd=Decimal("0"),
-                meta={"fallback_error": str(e), "topic": topic, **topic_meta},
+                meta={"fallback_error": repr(e), "traceback": tb, "topic": topic, **topic_meta},
             )
             self.stdout.write(
-                self.style.WARNING(f"OpenAI failed, fallback dummy used: {e}")
+                self.style.WARNING("OpenAI failed, fallback dummy used (see stderr for traceback)")
             )

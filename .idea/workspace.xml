@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4bb68edd-5845-46b0-8587-b5943c5d9792" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/management/commands/generate_daily_set.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/management/commands/generate_daily_set.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cron_push.log" beforeDir="false" afterPath="$PROJECT_DIR$/cron_push.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
@@ -120,7 +121,8 @@
       <workItem from="1762754051739" duration="17138000" />
       <workItem from="1762960012007" duration="2646000" />
       <workItem from="1763125443482" duration="4903000" />
-      <workItem from="1763436921273" duration="10361000" />
+      <workItem from="1763436921273" duration="14448000" />
+      <workItem from="1763487702179" duration="308000" />
     </task>
     <servers />
   </component>

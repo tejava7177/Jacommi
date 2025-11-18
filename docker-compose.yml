@@ -26,8 +26,8 @@ services:
       DJANGO_DEBUG: "False"
     restart: unless-stopped
     # 개발 중 코드 실시간 반영이 필요하면 주석 해제
-    # volumes:
-    #   - .:/app
+    volumes:
+      - ./firebase.json:/app/firebase.json
 
 volumes:
   pgdata:
