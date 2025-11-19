@@ -82,7 +82,6 @@ INSTALLED_APPS = [
     "rest_framework",
     # Local apps
     "core",
-    "django_prometheus",
 ]
 
 # ==========================
