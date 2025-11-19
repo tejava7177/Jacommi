@@ -24,7 +24,7 @@ staticfiles/          # collectstatic 결과(운영에서만)
 firebase-debug.log
 google-credentials.json
 
-*.js
+
 *.json
 *.sh
 
