@@ -82,6 +82,7 @@ INSTALLED_APPS = [
     "rest_framework",
     # Local apps
     "core",
+    "django_prometheus",
 ]
 
 # ==========================
@@ -99,7 +100,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-
+    "core.middleware.PrometheusRequestMiddleware",
     "django_prometheus.middleware.PrometheusBeforeMiddleware",
 
 ]

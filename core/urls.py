@@ -13,6 +13,7 @@ from .views import (
 )
 from .views_auth import google_login, google_callback
 from .api import calendar_insert_today
+from .views_metrics import metrics_view
 
 urlpatterns = [
     path("", today_page, name="today"),
@@ -34,4 +35,6 @@ urlpatterns = [
 
     # 로그아웃
     path("logout", logout_view, name="logout"),
+
+    path("metrics", metrics_view, name="metrics"),
 ]
