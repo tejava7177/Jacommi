@@ -68,7 +68,7 @@ async function registerServiceWorker() {
   if (!("serviceWorker" in navigator)) return null;
   try {
     // 정적 경로에 sw 파일 존재 필요
-    return await navigator.serviceWorker.register("/static/firebase-messaging-sw.js");
+    return await navigator.serviceWorker.register("/firebase-messaging-sw.js");
   } catch (e) {
     console.warn("ServiceWorker register failed:", e);
     return null;
