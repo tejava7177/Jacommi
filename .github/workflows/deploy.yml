@@ -1,0 +1,43 @@
+name: Deploy Jacommi to EC2
+
+on:
+  push:
+    branches: [ "main" ]   # main 에 푸시될 때마다 자동 배포
+  workflow_dispatch:       # 필요하면 Actions 탭에서 수동으로도 실행 가능
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository (for logging only)
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH to EC2
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          port: 22
+          script: |
+            set -e
+
+            echo "== 1) 프로젝트 디렉터리로 이동 =="
+            cd ${{ secrets.EC2_PROJECT_DIR }}
+
+            echo "== 2) 최신 main 가져오기 =="
+            git fetch origin main
+            git reset --hard origin/main
+
+            echo "== 3) Docker compose 재시작 =="
+            docker compose down
+            docker compose up -d --build
+
+            echo "== 4) 마이그레이션 실행 =="
+            docker compose exec -T web python manage.py migrate --noinput
+
+            echo "== 5) 오늘 문장 강제 생성 (테스트/초기화용) =="
+            docker compose exec -T web python manage.py generate_daily_set --force --topic auto
+
+            echo "배포 완료 🎉"
