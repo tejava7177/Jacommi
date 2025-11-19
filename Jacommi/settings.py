@@ -41,7 +41,12 @@ else:
     # 배포 환경: 항상 HTTPS 로 접근한다고 가정
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
-    SECURE_SSL_REDIRECT = True
+    SECURE_SSL_REDIRECT = False
+    # Nginx 에서 넘겨준 X-Forwarded-Proto 로 HTTPS 여부 판단
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
+
+
 
 # ==========================
 # 2. Static files
