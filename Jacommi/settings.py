@@ -1,38 +1,52 @@
 """
-Django settings for Jacommi project (minimal dev setup).
+Django settings for Jacommi project.
 """
+
 from pathlib import Path
 import os
 
+BASE_DIR = Path(__file__).resolve().parent.parent
 
-# --- Security / Debug (dev defaults) ---
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "django-insecure-change-me")  # ⚠️ set env in production
+# ==========================
+# 1. Security / Debug
+# ==========================
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "django-insecure-change-me")
 DEBUG = os.getenv("DJANGO_DEBUG", "true").lower() == "true"
 
+# ex) DJANGO_ALLOWED_HOSTS=127.0.0.1,localhost,web,3.34.98.58,jacommi.store,www.jacommi.store
 ALLOWED_HOSTS = os.getenv(
     "DJANGO_ALLOWED_HOSTS",
     "127.0.0.1,localhost",
 ).split(",")
 ALLOWED_HOSTS = [h.strip() for h in ALLOWED_HOSTS if h.strip()]
 
-# CSRF: allow local dev + Docker (8000/8001)
+# CSRF: 로컬 + Docker + 실제 도메인(jacommi.store)
 CSRF_TRUSTED_ORIGINS = [
+    # 로컬/도커 개발용
     "http://127.0.0.1:8000",
     "http://127.0.0.1:8001",
     "http://localhost:8000",
     "http://localhost:8001",
+    # 실제 서비스 도메인 (nginx + certbot 로 HTTPS 종단)
+    "https://jacommi.store",
+    "https://www.jacommi.store",
 ]
 
-SESSION_COOKIE_SECURE = False
-CSRF_COOKIE_SECURE = False
-SECURE_SSL_REDIRECT = False
+# HTTPS 관련 옵션은 DEBUG 여부에 따라 분기
+if DEBUG:
+    SESSION_COOKIE_SECURE = False
+    CSRF_COOKIE_SECURE = False
+    SECURE_SSL_REDIRECT = False
+else:
+    # 배포 환경: 항상 HTTPS 로 접근한다고 가정
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_SSL_REDIRECT = True
 
+# ==========================
+# 2. Static files
+# ==========================
 
-
-
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-# --- Static files ---
 STATIC_URL = "/static/"
 
 # 개발용: 프로젝트 안의 static 디렉터리
@@ -47,9 +61,10 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 if not DEBUG:
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+# ==========================
+# 3. Applications
+# ==========================
 
-
-# --- Applications ---
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -60,10 +75,13 @@ INSTALLED_APPS = [
     # Third-party
     "rest_framework",
     # Local apps
-    "core",  # ← 생성 후 주석 해제
+    "core",
 ]
 
-# --- Middleware ---
+# ==========================
+# 4. Middleware
+# ==========================
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
@@ -77,7 +95,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "Jacommi.urls"
 
-# --- Templates ---
+# ==========================
+# 5. Templates
+# ==========================
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -96,7 +117,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "Jacommi.wsgi.application"
 
-# --- Database ---
+# ==========================
+# 6. Database
+# ==========================
 
 # DB_HOST 환경변수가 있으면 Postgres, 없으면 sqlite3 사용
 if os.getenv("DB_HOST"):
@@ -120,8 +143,10 @@ else:
         }
     }
 
+# ==========================
+# 7. Auth / I18N / etc.
+# ==========================
 
-# --- Password validation ---
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
@@ -129,11 +154,9 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
-# --- Internationalization ---
 LANGUAGE_CODE = "ko-kr"
 TIME_ZONE = "Asia/Seoul"
 USE_I18N = True
 USE_TZ = True
 
-# --- Default primary key ---
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
