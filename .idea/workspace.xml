@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4bb68edd-5845-46b0-8587-b5943c5d9792" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cron_push.log" beforeDir="false" afterPath="$PROJECT_DIR$/cron_push.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Dockerfile" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -120,6 +120,7 @@
       <workItem from="1763125443482" duration="4903000" />
       <workItem from="1763436921273" duration="14448000" />
       <workItem from="1763487702179" duration="2787000" />
+      <workItem from="1763520061937" duration="8860000" />
     </task>
     <servers />
   </component>

@@ -20,7 +20,11 @@ from django.urls import path, include
 from core.views import fcm_register
 from core.views_auth import google_login, google_callback
 
+
+
 urlpatterns = [
+    path("metrics/", include("django_prometheus.urls")),  # 👈 추가
+
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
     # path("api/", include("core.api")),

@@ -71,6 +71,7 @@ if not DEBUG:
 # ==========================
 
 INSTALLED_APPS = [
+    "django_prometheus",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -88,6 +89,8 @@ INSTALLED_APPS = [
 # ==========================
 
 MIDDLEWARE = [
+    "django_prometheus.middleware.PrometheusBeforeMiddleware",
+
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -96,6 +99,9 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+
+    "django_prometheus.middleware.PrometheusBeforeMiddleware",
+
 ]
 
 ROOT_URLCONF = "Jacommi.urls"
@@ -128,14 +134,14 @@ WSGI_APPLICATION = "Jacommi.wsgi.application"
 
 # DB_HOST 환경변수가 있으면 Postgres, 없으면 sqlite3 사용
 if os.getenv("DB_HOST"):
-    # Docker / 배포 환경: Postgres
+    # Django + Prometheus용 Postgres 백엔드
     DATABASES = {
         "default": {
-            "ENGINE": "django.db.backends.postgresql",
+            "ENGINE": "django_prometheus.db.backends.postgresql",
             "NAME": os.getenv("DB_NAME", "jacommi"),
             "USER": os.getenv("DB_USER", "jacommi"),
             "PASSWORD": os.getenv("DB_PASSWORD", "jacommi-password"),
-            "HOST": os.getenv("DB_HOST", "db"),   # docker-compose 서비스 이름
+            "HOST": os.getenv("DB_HOST", "db"),
             "PORT": os.getenv("DB_PORT", "5432"),
         }
     }
