@@ -89,8 +89,10 @@ INSTALLED_APPS = [
 # ==========================
 
 MIDDLEWARE = [
+    # ✅ Prometheus: request 처리 전에 계측
     "django_prometheus.middleware.PrometheusBeforeMiddleware",
 
+    # Django 기본 미들웨어들
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -99,9 +101,13 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "core.middleware.PrometheusRequestMiddleware",
-    "django_prometheus.middleware.PrometheusBeforeMiddleware",
 
+    # ✅ 우리 커스텀 메트릭/헤더 미들웨어
+    "core.middleware.PrometheusRequestMiddleware",
+    "core.middleware.ServerIdHeaderMiddleware",
+
+    # ✅ Prometheus: response 후 마무리 계측
+    "django_prometheus.middleware.PrometheusAfterMiddleware",
 ]
 
 ROOT_URLCONF = "Jacommi.urls"
